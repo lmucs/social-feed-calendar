@@ -29,7 +29,7 @@ mockEvents = [
     feedName: 'LoyolaMarymountUniversity'
     origin: 'facebook'
     post: 'Today is ASLMU\'s Fallapalooza, headlined by indie-rockers WALK THE MOON! \\
-            Take a look back at last year\'s inaugural festival in this "Slice of LMU" vevent_ideo...'
+            Take a look back at last year\'s inaugural festival in this "Slice of LMU" video...'
   }
   {
     title: '2nd Annual Women in Athletics Day'
