@@ -3,7 +3,7 @@ mockEvents = [
     title: 'Pose with the Pope'
     date: '10/23/2015'
     allDay: false
-    event_id: 110
+    eventID: 110
     timeProcessed: 1443116931
     location: 'Regents Grass'
     startTime: 1443034800
@@ -20,7 +20,7 @@ mockEvents = [
     title: 'Fallapalooza'
     date: '010/20/2015'
     allDay: true
-    event_id: 111
+    eventID: 111
     timeProcessed: 1443117374
     location: 'Sunken Gardens'
     startTime: 0
@@ -35,7 +35,7 @@ mockEvents = [
     title: '2nd Annual Women in Athletics Day'
     date: '10/18/2015'
     allDay: true
-    event_id: 112
+    eventID: 112
     timeProcessed: 1443118121
     location: 'Sunken Gardens'
     startTime: 0
@@ -51,7 +51,7 @@ mockEvents = [
     title: 'Life Sciences Building Dedication'
     date: '10/05/2015'
     allDay: false
-    event_id: 113
+    eventID: 113
     timeProcessed: 1444090740
     location: 'Life Sciences Building'
     startTime: 1444046400
@@ -66,7 +66,7 @@ mockEvents = [
     title: 'Spring Housing App Opens'
     date: '10/30/2015'
     allDay: true
-    event_id: 114
+    eventID: 114
     timeProcessed: 1444091026
     location: ''
     startTime: 0
@@ -80,7 +80,7 @@ mockEvents = [
     title: 'Zac Brown Band'
     date: '10/09/2015'
     allDay: false
-    event_id: 115
+    eventID: 115
     timeProcessed: 1444091104
     location: 'Hollywood Bowl'
     startTime: 1444391100
@@ -88,13 +88,13 @@ mockEvents = [
     tags: ['music']
     feedName: 'https://LMUStudentHousing'
     origin: 'facebook'
-    post: 'Zac Brown Band, the three-time GRAMMY winning and multi-platinum country band is coming to the Hollywood Bowl! Joing the Program assistants on a night of their Jekyll + Hyde Tour. Buses leave at 4:45pm from Hannon Field. TERMS OF AGREEMENT: required to travel in the transport provevent_ided, no refunds, no substances/alcohol free, LMU students only, MUST SIGN WAIVER IN LEAVEY 5 SUITE 300 BY 10/9'
+    post: 'Zac Brown Band, the three-time GRAMMY winning and multi-platinum country band is coming to the Hollywood Bowl! Joing the Program assistants on a night of their Jekyll + Hyde Tour. Buses leave at 4:45pm from Hannon Field. TERMS OF AGREEMENT: required to travel in the transport proveventIDed, no refunds, no substances/alcohol free, LMU students only, MUST SIGN WAIVER IN LEAVEY 5 SUITE 300 BY 10/9'
   }
   {
     title: 'LA Cybersecurity Summit'
     date: '10/10/2015'
     allDay: true
-    event_id: 116
+    eventID: 116
     timeProcessed: 1444091113
     location: ''
     startTime: 0
@@ -108,7 +108,7 @@ mockEvents = [
     title: 'LMUSnyder'
     date: '10/06/2015'
     allDay: false
-    event_id: 117
+    eventID: 117
     timeProcessed: 1444091122
     location: 'Gersten Pavilion'
     startTime: 1444120200
@@ -122,7 +122,7 @@ mockEvents = [
     title: '60 Second Lectures'
     date: '10/21/2015'
     allDay: false
-    event_id: 118
+    eventID: 118
     timeProcessed: 1444091129
     location: ''
     startTime: 1445481000
@@ -136,7 +136,7 @@ mockEvents = [
     title: 'Bioethics Coffee Hour'
     date: '10/06/2015'
     allDay: false
-    event_id: 119
+    eventID: 119
     timeProcessed: 1444091141
     location: 'Sunken Gardens'
     startTime: 1444136400
@@ -150,7 +150,7 @@ mockEvents = [
     title: 'Better, Faster, Stronger Job Search'
     date: '10/20/2015'
     allDay: false
-    event_id: 120
+    eventID: 120
     timeProcessed: 1444091155
     location: ''
     startTime: 1445365800
@@ -164,7 +164,7 @@ mockEvents = [
     title: 'PSAT Day'
     date: '10/14/2015'
     allDay: true
-    event_id: 121
+    eventID: 121
     timeProcessed: 1444091164
     location: ''
     startTime: 0
@@ -178,7 +178,7 @@ mockEvents = [
     title: 'Destruction of Historical Artifacts Discussion'
     date: '10/14/2015'
     allDay: false
-    event_id: 122
+    eventID: 122
     timeProcessed: 1444091173
     location: 'Uhall'
     startTime: 1444867200
@@ -192,7 +192,7 @@ mockEvents = [
     title: 'FOS Sports Night: Men\'s Water Polo vs San Jose State'
     date: '11/06/2015'
     allDay: true
-    event_id: 123
+    eventID: 123
     timeProcessed: 1444091180
     location: ''
     startTime: 0
@@ -206,7 +206,7 @@ mockEvents = [
     title: 'Red Ribbon Week'
     date: '10/26/2015'
     allDay: true
-    event_id: 124
+    eventID: 124
     timeProcessed: 1444091188
     location: ''
     startTime: 0
@@ -214,13 +214,13 @@ mockEvents = [
     tags: []
     feedName: 'LoyolaMarymountUniversity'
     origin: 'facebook'
-    post: 'National Famiy Partnership provevent_ides drug awareness by sponsoring the National Red Ribbon Celebration.'
+    post: 'National Famiy Partnership proveventIDes drug awareness by sponsoring the National Red Ribbon Celebration.'
   }
   {
     title: 'Transfer Student Information Session & Tour'
     date: '10/28/2015'
     allDay: false
-    event_id: 125
+    eventID: 125
     timeProcessed: 1444091203
     location: 'Von der Ahe'
     startTime: 1446067800
