@@ -72,7 +72,7 @@ mockEvents = [
     startTime: 0
     endTime: 0
     tags: ['housing', 'lion']
-    feedName: 'https://LMUStudentHousing'
+    feedName: 'LMUStudentHousing'
     origin: 'facebook'
     post: 'Live in Lion Nation this Spring: Application Opens October 30, 2015! http://studentaffairs.lmu.edu/…/prospectiv…/applyforhousing/'
   }
@@ -86,9 +86,9 @@ mockEvents = [
     startTime: 1444391100
     endTime: 1444402800
     tags: ['music']
-    feedName: 'https://LMUStudentHousing'
+    feedName: 'LMUStudentHousing'
     origin: 'facebook'
-    post: 'Zac Brown Band, the three-time GRAMMY winning and multi-platinum country band is coming to the Hollywood Bowl! Joing the Program assistants on a night of their Jekyll + Hyde Tour. Buses leave at 4:45pm from Hannon Field. TERMS OF AGREEMENT: required to travel in the transport proveventIDed, no refunds, no substances/alcohol free, LMU students only, MUST SIGN WAIVER IN LEAVEY 5 SUITE 300 BY 10/9'
+    post: 'Zac Brown Band, the three-time GRAMMY winning and multi-platinum country band is coming to the Hollywood Bowl! Joing the Program assistants on a night of their Jekyll + Hyde Tour. Buses leave at 4:45pm from Hannon Field. TERMS OF AGREEMENT: required to travel in the transport provided, no refunds, no substances/alcohol free, LMU students only, MUST SIGN WAIVER IN LEAVEY 5 SUITE 300 BY 10/9'
   }
   {
     title: 'LA Cybersecurity Summit'
@@ -214,7 +214,7 @@ mockEvents = [
     tags: []
     feedName: 'LoyolaMarymountUniversity'
     origin: 'facebook'
-    post: 'National Famiy Partnership proveventIDes drug awareness by sponsoring the National Red Ribbon Celebration.'
+    post: 'National Famiy Partnership provides drug awareness by sponsoring the National Red Ribbon Celebration.'
   }
   {
     title: 'Transfer Student Information Session & Tour'
