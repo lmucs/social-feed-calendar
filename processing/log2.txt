@@ -188,4 +188,384 @@
     "text": "And the Lions hold on for the victory, 4-3 over @WCHCHockey rival @TitanIceHockey and the Lions are back in the W column",
     "feed": "LMUIceHockey",
     "date": "Sat Oct 10 07:00:00 +0000 2015"
+}{
+    "id": 653683194701570000,
+    "text": "On October 21st were having an acoustic live concert in the living room at 8:00pm! Stay tuned for hints on who is coming.",
+    "feed": "MEforLMU",
+    "date": "Mon Oct 12 21:26:33 +0000 2015"
+}{
+    "id": 653676392245129200,
+    "text": "The approved minutes from the Faculty Senate's 24 September 2015 meeting are now available on Box: https://t.co/1c79D3IUPU",
+    "feed": "LMUFacSen",
+    "date": "Mon Oct 12 20:59:31 +0000 2015"
+}{
+    "id": 653667659146330100,
+    "text": "Try Global Chef, Francisco Layera's delicious menu TODAY ! #roskiLMU #TheLairLMU #ilovelmu http://t.co/qa520wJ1rz",
+    "feed": "LMUHospitality",
+    "date": "Mon Oct 12 20:24:49 +0000 2015"
+}{
+    "id": 653666478655455200,
+    "text": "Thanks to everyone that came out to ROAR Talks! We had a blast with Raamla Mohammed and we hope you did too! Until next time! (Oct. 25th)",
+    "feed": "roarstudiosla",
+    "date": "Mon Oct 12 20:20:07 +0000 2015"
+}{
+    "id": 653665356142260200,
+    "text": "TONIGHT ROAR Studios is hosting a Sketch Writing Workshop @ 7:30 PM. Rsvp to attend: https://t.co/r42ht8vsOr",
+    "feed": "roarstudiosla",
+    "date": "Mon Oct 12 20:15:40 +0000 2015"
+}{
+    "id": 653652803500425200,
+    "text": "Get ready for the ARC's first ever Study Jam! Our first meeting will be held on the afternoon of October 22nd. More details coming soon!",
+    "feed": "LMUARC",
+    "date": "Mon Oct 12 19:25:47 +0000 2015"
+}{
+    "id": 653645888947007500,
+    "text": "Hey Lions! Today marks the first day of #ASLMUWaterWeek! To kick off this weeks events, today is Meatless Monday in the Lair!",
+    "feed": "MyASLMU",
+    "date": "Mon Oct 12 18:58:18 +0000 2015"
+}{
+    "id": 653633045912793100,
+    "text": "Chef Francisco is prepping the chilled tomatoes stuffed with chicken and spices. Come try them today… https://t.co/TxMUUbttwd",
+    "feed": "LMUHospitality",
+    "date": "Mon Oct 12 18:07:16 +0000 2015"
+}{
+    "id": 653625838932398100,
+    "text": "TODAY: LMU international student Rohan Reddi launches his app Twine. Noon, Lawton Plaza: https://t.co/5iUOOJvvzU http://t.co/aygw3djj7O",
+    "feed": "LMUEXP",
+    "date": "Mon Oct 12 17:38:38 +0000 2015"
+}{
+    "id": 653624213589225500,
+    "text": "Come support fellow international student, Rohan Reddi, at the launch celebration for his app Twine today at 12PM... http://t.co/hyYlujQwAd",
+    "feed": "LMU_OISS",
+    "date": "Mon Oct 12 17:32:10 +0000 2015"
+}{
+    "id": 653609589863137300,
+    "text": "Southland: LatinoLA is this Wednesday (10/14) in Ahmanson Auditorium! For more info, visit: http://t.co/qJ48Ol2RNQ http://t.co/k6nLlU0Beo",
+    "feed": "LMUEXP",
+    "date": "Mon Oct 12 16:34:04 +0000 2015"
+}{
+    "id": 653608383816175600,
+    "text": "TODAY: Support senior Rohan Reddi by attending the launch of Twine, an app he created! http://t.co/h4N3TSnF81 http://t.co/ngy2hiHt8v",
+    "feed": "LMUEXP",
+    "date": "Mon Oct 12 16:29:16 +0000 2015"
+}{
+    "id": 653598361187061800,
+    "text": "What can a @LMUDoctoral Ed.D. do for you? Attend our Oct. 20th Info Session and find out! http://t.co/YarZUCPl4E #leadership #socialjustice",
+    "feed": "LMUDoctoral",
+    "date": "Mon Oct 12 15:49:27 +0000 2015"
+}{
+    "id": 653597223565979600,
+    "text": "Is Your Teaching Style Racism Free? A Faculty Pub Night presentation by Dr. Shani Byard (Oct. 13, 2015) http://t.co/4toDU2LyW0",
+    "feed": "lmulibrary",
+    "date": "Mon Oct 12 15:44:56 +0000 2015"
+}{
+    "id": 653574142093062100,
+    "text": "Today’s JSTOR Daily takes a look at the complicated history of Columbus Day in the U.S.: http://t.co/N5nK8yISnV #IndigenousPeoplesDay",
+    "feed": "lmulibrary",
+    "date": "Mon Oct 12 14:13:12 +0000 2015"
+}{
+    "id": 653392767456927700,
+    "text": "Major progress on Gersten Pavilion center-hung scoreboard. Getting raised Monday.... #daktronics #LMULions http://t.co/jQ8BPuhR7c",
+    "feed": "LMULions",
+    "date": "Mon Oct 12 02:12:29 +0000 2015"
+}{
+    "id": 653360923508248600,
+    "text": "WSOC | @lmuwsoc Blanks Dons, 2-0, Moves to 9-4-1 Overall, 3-1-0 in WCC http://t.co/4PAiWPtgMJ #LMULions",
+    "feed": "LMULions",
+    "date": "Mon Oct 12 00:05:57 +0000 2015"
+}{
+    "id": 653360656138178600,
+    "text": "Great view of the Golden Gate Bridge this afternoon! http://t.co/J5dtCKbTVl",
+    "feed": "lmuwsoc",
+    "date": "Mon Oct 12 00:04:53 +0000 2015"
+}{
+    "id": 653342097949397000,
+    "text": "MWP | @LMULionsPolo earn sweep with 10-4 win. Jennis adds four more, scores 9 on the day at #SoCalInvitational http://t.co/XKGXxfpLJt",
+    "feed": "LMULions",
+    "date": "Sun Oct 11 22:51:09 +0000 2015"
+}{
+    "id": 653340112021880800,
+    "text": "Great team win today with goals by Sarah Sanger and Melissa Lewis! Your Lions are now 9-4-1 overall and 3-1 in conference👊🏼 #GoLions",
+    "feed": "lmuwsoc",
+    "date": "Sun Oct 11 22:43:15 +0000 2015"
+}{
+    "id": 653270579563364400,
+    "text": "The story of Thomas Jefferson’s two families – white and black – comes alive in \"Monticello Wakes\", 10/16-18 at LMU: http://t.co/qT5ZStooG0",
+    "feed": "LoyolaMarymount",
+    "date": "Sun Oct 11 18:06:58 +0000 2015"
+}{
+    "id": 653269173271859200,
+    "text": "ROAR Talks is happening today at 4PM in Deja View! Come to our Q&amp;A with Raamla Mohammed! (Scandal) http://t.co/UuqddSHrBZ",
+    "feed": "roarstudiosla",
+    "date": "Sun Oct 11 18:01:22 +0000 2015"
+}{
+    "id": 653259329630416900,
+    "text": "Game day in San Francisco for your Lady Lions! Be sure to tune in at 1pm and support! http://t.co/ag3gjpmFva",
+    "feed": "lmuwsoc",
+    "date": "Sun Oct 11 17:22:15 +0000 2015"
+}{
+    "id": 653258869385244700,
+    "text": "MWP | Liam Jennis lifts Lions to 11-8 win with five goals, scoring @LMULionsPolo last four of game. #LMULions http://t.co/gmM7JDKQdY",
+    "feed": "LMULions",
+    "date": "Sun Oct 11 17:20:26 +0000 2015"
+}{
+    "id": 653209848180404200,
+    "text": "nothing better than #lmulions on the bluff. Day 2 of #socalinvite to start at 8. Follow at http://t.co/w3TkF8qbfI http://t.co/SfpTe6NhRV",
+    "feed": "LMULions",
+    "date": "Sun Oct 11 14:05:38 +0000 2015"
+}{
+    "id": 653061755371786200,
+    "text": "Big thank you to the Medved family for hosting us for a delicious dinner! Getting ready for a big game tomorrow👊🏼 http://t.co/oMnUUnyL05",
+    "feed": "lmuwsoc",
+    "date": "Sun Oct 11 04:17:10 +0000 2015"
+}{
+    "id": 652989979795157000,
+    "text": "Let the countdown to #lmumadness begin! In two weeks...free #lmu student giveaways, meet the 2015-16… https://t.co/fb0RLQekDx",
+    "feed": "LMUwbb",
+    "date": "Sat Oct 10 23:31:57 +0000 2015"
+}{
+    "id": 652981949498134500,
+    "text": "Happy National Day from Taiwan! Every October 10th is an important date for Taiwan; the celebration of the birth... http://t.co/qote8Ne2AU",
+    "feed": "LMU_OISS",
+    "date": "Sat Oct 10 23:00:03 +0000 2015"
+}{
+    "id": 652975684688707600,
+    "text": "Our annual 60 Second Lectures event is coming up on October 21st! The theme? THIS IDEA MUST DIE. Don't miss out, RSVP on Facebook now!",
+    "feed": "LALoyolan",
+    "date": "Sat Oct 10 22:35:09 +0000 2015"
+}{
+    "id": 652953257623470100,
+    "text": "WVB | @LMU_Volleyball Sweeps Pacific Northwest Trip with 3-0 Victory at Portland! #LMULions http://t.co/QmuQXgykV0",
+    "feed": "LMULions",
+    "date": "Sat Oct 10 21:06:02 +0000 2015"
+}{
+    "id": 652919578180255700,
+    "text": ": Racing a \"B\" squad of competitors at Saturday's UCSD Triton Invitational, the LMU men's and women's cross co... http://t.co/OD1pbG1W4i",
+    "feed": "LMULionTRaXC",
+    "date": "Sat Oct 10 18:52:12 +0000 2015"
+}{
+    "id": 652915188572618800,
+    "text": "Join us this Tuesday @lmulibrary​ for @LMUsoe @DrShaniByard's pub talk about \"Is Your Teaching Style Racism Free\": http://t.co/Mol7DqL7m5",
+    "feed": "LMUFacSen",
+    "date": "Sat Oct 10 18:34:46 +0000 2015"
+}{
+    "id": 652905196842946600,
+    "text": "Good luck tonight @lmumsoc! Get it done! #GoLions  https://t.co/TsfRhfUtAm",
+    "feed": "lmuwsoc",
+    "date": "Sat Oct 10 17:55:03 +0000 2015"
+}{
+    "id": 652898950387642400,
+    "text": "GAMEDAY!!! The Lions travel to @USDmsoccer to open up @WCCsports play tonight at 7pm. #GoLions #LMU #LMULions",
+    "feed": "lmumsoc",
+    "date": "Sat Oct 10 17:30:14 +0000 2015"
+}{
+    "id": 652890174842622000,
+    "text": "It's October 10th, with a forecast high of 90 degrees... Who's hitting the beach today? \n\n#ILoveLMU http://t.co/19jMLbciMW",
+    "feed": "LoyolaMarymount",
+    "date": "Sat Oct 10 16:55:22 +0000 2015"
+}{
+    "id": 652844627016323100,
+    "text": "MWP | sun rises over Burns Center and day one of #socalinvite. Game one at 8 am. @lmulions polo at 10:40 #lmulions http://t.co/ljxliVcDRu",
+    "feed": "LMULions",
+    "date": "Sat Oct 10 13:54:23 +0000 2015"
+}{
+    "id": 652740957213855700,
+    "text": "Lions spread out the scoring, Tracy, Martins, Vitta, Costin - in their 4-3 victory over CSUF.  @jblazier20 strong in net.",
+    "feed": "LMUIceHockey",
+    "date": "Sat Oct 10 07:02:26 +0000 2015"
+}{
+    "id": 652740346950979600,
+    "text": "And the Lions hold on for the victory, 4-3 over @WCHCHockey rival @TitanIceHockey and the Lions are back in the W column",
+    "feed": "LMUIceHockey",
+    "date": "Sat Oct 10 07:00:00 +0000 2015"
+}{
+    "id": 653683194701570000,
+    "text": "On October 21st were having an acoustic live concert in the living room at 8:00pm! Stay tuned for hints on who is coming.",
+    "feed": "MEforLMU",
+    "date": "Mon Oct 12 21:26:33 +0000 2015"
+}{
+    "id": 653676392245129200,
+    "text": "The approved minutes from the Faculty Senate's 24 September 2015 meeting are now available on Box: https://t.co/1c79D3IUPU",
+    "feed": "LMUFacSen",
+    "date": "Mon Oct 12 20:59:31 +0000 2015"
+}{
+    "id": 653667659146330100,
+    "text": "Try Global Chef, Francisco Layera's delicious menu TODAY ! #roskiLMU #TheLairLMU #ilovelmu http://t.co/qa520wJ1rz",
+    "feed": "LMUHospitality",
+    "date": "Mon Oct 12 20:24:49 +0000 2015"
+}{
+    "id": 653666478655455200,
+    "text": "Thanks to everyone that came out to ROAR Talks! We had a blast with Raamla Mohammed and we hope you did too! Until next time! (Oct. 25th)",
+    "feed": "roarstudiosla",
+    "date": "Mon Oct 12 20:20:07 +0000 2015"
+}{
+    "id": 653665356142260200,
+    "text": "TONIGHT ROAR Studios is hosting a Sketch Writing Workshop @ 7:30 PM. Rsvp to attend: https://t.co/r42ht8vsOr",
+    "feed": "roarstudiosla",
+    "date": "Mon Oct 12 20:15:40 +0000 2015"
+}{
+    "id": 653652803500425200,
+    "text": "Get ready for the ARC's first ever Study Jam! Our first meeting will be held on the afternoon of October 22nd. More details coming soon!",
+    "feed": "LMUARC",
+    "date": "Mon Oct 12 19:25:47 +0000 2015"
+}{
+    "id": 653645888947007500,
+    "text": "Hey Lions! Today marks the first day of #ASLMUWaterWeek! To kick off this weeks events, today is Meatless Monday in the Lair!",
+    "feed": "MyASLMU",
+    "date": "Mon Oct 12 18:58:18 +0000 2015"
+}{
+    "id": 653633045912793100,
+    "text": "Chef Francisco is prepping the chilled tomatoes stuffed with chicken and spices. Come try them today… https://t.co/TxMUUbttwd",
+    "feed": "LMUHospitality",
+    "date": "Mon Oct 12 18:07:16 +0000 2015"
+}{
+    "id": 653625838932398100,
+    "text": "TODAY: LMU international student Rohan Reddi launches his app Twine. Noon, Lawton Plaza: https://t.co/5iUOOJvvzU http://t.co/aygw3djj7O",
+    "feed": "LMUEXP",
+    "date": "Mon Oct 12 17:38:38 +0000 2015"
+}{
+    "id": 653624213589225500,
+    "text": "Come support fellow international student, Rohan Reddi, at the launch celebration for his app Twine today at 12PM... http://t.co/hyYlujQwAd",
+    "feed": "LMU_OISS",
+    "date": "Mon Oct 12 17:32:10 +0000 2015"
+}{
+    "id": 653609589863137300,
+    "text": "Southland: LatinoLA is this Wednesday (10/14) in Ahmanson Auditorium! For more info, visit: http://t.co/qJ48Ol2RNQ http://t.co/k6nLlU0Beo",
+    "feed": "LMUEXP",
+    "date": "Mon Oct 12 16:34:04 +0000 2015"
+}{
+    "id": 653608383816175600,
+    "text": "TODAY: Support senior Rohan Reddi by attending the launch of Twine, an app he created! http://t.co/h4N3TSnF81 http://t.co/ngy2hiHt8v",
+    "feed": "LMUEXP",
+    "date": "Mon Oct 12 16:29:16 +0000 2015"
+}{
+    "id": 653598361187061800,
+    "text": "What can a @LMUDoctoral Ed.D. do for you? Attend our Oct. 20th Info Session and find out! http://t.co/YarZUCPl4E #leadership #socialjustice",
+    "feed": "LMUDoctoral",
+    "date": "Mon Oct 12 15:49:27 +0000 2015"
+}{
+    "id": 653597223565979600,
+    "text": "Is Your Teaching Style Racism Free? A Faculty Pub Night presentation by Dr. Shani Byard (Oct. 13, 2015) http://t.co/4toDU2LyW0",
+    "feed": "lmulibrary",
+    "date": "Mon Oct 12 15:44:56 +0000 2015"
+}{
+    "id": 653574142093062100,
+    "text": "Today’s JSTOR Daily takes a look at the complicated history of Columbus Day in the U.S.: http://t.co/N5nK8yISnV #IndigenousPeoplesDay",
+    "feed": "lmulibrary",
+    "date": "Mon Oct 12 14:13:12 +0000 2015"
+}{
+    "id": 653392767456927700,
+    "text": "Major progress on Gersten Pavilion center-hung scoreboard. Getting raised Monday.... #daktronics #LMULions http://t.co/jQ8BPuhR7c",
+    "feed": "LMULions",
+    "date": "Mon Oct 12 02:12:29 +0000 2015"
+}{
+    "id": 653360923508248600,
+    "text": "WSOC | @lmuwsoc Blanks Dons, 2-0, Moves to 9-4-1 Overall, 3-1-0 in WCC http://t.co/4PAiWPtgMJ #LMULions",
+    "feed": "LMULions",
+    "date": "Mon Oct 12 00:05:57 +0000 2015"
+}{
+    "id": 653360656138178600,
+    "text": "Great view of the Golden Gate Bridge this afternoon! http://t.co/J5dtCKbTVl",
+    "feed": "lmuwsoc",
+    "date": "Mon Oct 12 00:04:53 +0000 2015"
+}{
+    "id": 653342097949397000,
+    "text": "MWP | @LMULionsPolo earn sweep with 10-4 win. Jennis adds four more, scores 9 on the day at #SoCalInvitational http://t.co/XKGXxfpLJt",
+    "feed": "LMULions",
+    "date": "Sun Oct 11 22:51:09 +0000 2015"
+}{
+    "id": 653340112021880800,
+    "text": "Great team win today with goals by Sarah Sanger and Melissa Lewis! Your Lions are now 9-4-1 overall and 3-1 in conference👊🏼 #GoLions",
+    "feed": "lmuwsoc",
+    "date": "Sun Oct 11 22:43:15 +0000 2015"
+}{
+    "id": 653270579563364400,
+    "text": "The story of Thomas Jefferson’s two families – white and black – comes alive in \"Monticello Wakes\", 10/16-18 at LMU: http://t.co/qT5ZStooG0",
+    "feed": "LoyolaMarymount",
+    "date": "Sun Oct 11 18:06:58 +0000 2015"
+}{
+    "id": 653269173271859200,
+    "text": "ROAR Talks is happening today at 4PM in Deja View! Come to our Q&amp;A with Raamla Mohammed! (Scandal) http://t.co/UuqddSHrBZ",
+    "feed": "roarstudiosla",
+    "date": "Sun Oct 11 18:01:22 +0000 2015"
+}{
+    "id": 653259329630416900,
+    "text": "Game day in San Francisco for your Lady Lions! Be sure to tune in at 1pm and support! http://t.co/ag3gjpmFva",
+    "feed": "lmuwsoc",
+    "date": "Sun Oct 11 17:22:15 +0000 2015"
+}{
+    "id": 653258869385244700,
+    "text": "MWP | Liam Jennis lifts Lions to 11-8 win with five goals, scoring @LMULionsPolo last four of game. #LMULions http://t.co/gmM7JDKQdY",
+    "feed": "LMULions",
+    "date": "Sun Oct 11 17:20:26 +0000 2015"
+}{
+    "id": 653209848180404200,
+    "text": "nothing better than #lmulions on the bluff. Day 2 of #socalinvite to start at 8. Follow at http://t.co/w3TkF8qbfI http://t.co/SfpTe6NhRV",
+    "feed": "LMULions",
+    "date": "Sun Oct 11 14:05:38 +0000 2015"
+}{
+    "id": 653061755371786200,
+    "text": "Big thank you to the Medved family for hosting us for a delicious dinner! Getting ready for a big game tomorrow👊🏼 http://t.co/oMnUUnyL05",
+    "feed": "lmuwsoc",
+    "date": "Sun Oct 11 04:17:10 +0000 2015"
+}{
+    "id": 652989979795157000,
+    "text": "Let the countdown to #lmumadness begin! In two weeks...free #lmu student giveaways, meet the 2015-16… https://t.co/fb0RLQekDx",
+    "feed": "LMUwbb",
+    "date": "Sat Oct 10 23:31:57 +0000 2015"
+}{
+    "id": 652981949498134500,
+    "text": "Happy National Day from Taiwan! Every October 10th is an important date for Taiwan; the celebration of the birth... http://t.co/qote8Ne2AU",
+    "feed": "LMU_OISS",
+    "date": "Sat Oct 10 23:00:03 +0000 2015"
+}{
+    "id": 652975684688707600,
+    "text": "Our annual 60 Second Lectures event is coming up on October 21st! The theme? THIS IDEA MUST DIE. Don't miss out, RSVP on Facebook now!",
+    "feed": "LALoyolan",
+    "date": "Sat Oct 10 22:35:09 +0000 2015"
+}{
+    "id": 652953257623470100,
+    "text": "WVB | @LMU_Volleyball Sweeps Pacific Northwest Trip with 3-0 Victory at Portland! #LMULions http://t.co/QmuQXgykV0",
+    "feed": "LMULions",
+    "date": "Sat Oct 10 21:06:02 +0000 2015"
+}{
+    "id": 652919578180255700,
+    "text": ": Racing a \"B\" squad of competitors at Saturday's UCSD Triton Invitational, the LMU men's and women's cross co... http://t.co/OD1pbG1W4i",
+    "feed": "LMULionTRaXC",
+    "date": "Sat Oct 10 18:52:12 +0000 2015"
+}{
+    "id": 652915188572618800,
+    "text": "Join us this Tuesday @lmulibrary​ for @LMUsoe @DrShaniByard's pub talk about \"Is Your Teaching Style Racism Free\": http://t.co/Mol7DqL7m5",
+    "feed": "LMUFacSen",
+    "date": "Sat Oct 10 18:34:46 +0000 2015"
+}{
+    "id": 652905196842946600,
+    "text": "Good luck tonight @lmumsoc! Get it done! #GoLions  https://t.co/TsfRhfUtAm",
+    "feed": "lmuwsoc",
+    "date": "Sat Oct 10 17:55:03 +0000 2015"
+}{
+    "id": 652898950387642400,
+    "text": "GAMEDAY!!! The Lions travel to @USDmsoccer to open up @WCCsports play tonight at 7pm. #GoLions #LMU #LMULions",
+    "feed": "lmumsoc",
+    "date": "Sat Oct 10 17:30:14 +0000 2015"
+}{
+    "id": 652890174842622000,
+    "text": "It's October 10th, with a forecast high of 90 degrees... Who's hitting the beach today? \n\n#ILoveLMU http://t.co/19jMLbciMW",
+    "feed": "LoyolaMarymount",
+    "date": "Sat Oct 10 16:55:22 +0000 2015"
+}{
+    "id": 652844627016323100,
+    "text": "MWP | sun rises over Burns Center and day one of #socalinvite. Game one at 8 am. @lmulions polo at 10:40 #lmulions http://t.co/ljxliVcDRu",
+    "feed": "LMULions",
+    "date": "Sat Oct 10 13:54:23 +0000 2015"
+}{
+    "id": 652740957213855700,
+    "text": "Lions spread out the scoring, Tracy, Martins, Vitta, Costin - in their 4-3 victory over CSUF.  @jblazier20 strong in net.",
+    "feed": "LMUIceHockey",
+    "date": "Sat Oct 10 07:02:26 +0000 2015"
+}{
+    "id": 652740346950979600,
+    "text": "And the Lions hold on for the victory, 4-3 over @WCHCHockey rival @TitanIceHockey and the Lions are back in the W column",
+    "feed": "LMUIceHockey",
+    "date": "Sat Oct 10 07:00:00 +0000 2015"
 }
