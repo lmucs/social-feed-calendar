@@ -1,0 +1,9 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Grapevine' do
+    pod 'Alamofire', '~> 2.0'
+    pod 'ObjectMapper', '~> 0.17'
+    pod 'AlamofireObjectMapper', '~> 1.0'
+    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+end

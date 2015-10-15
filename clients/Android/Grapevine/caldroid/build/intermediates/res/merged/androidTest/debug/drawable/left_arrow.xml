@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/calendar_prev_arrow"
+    android:tileMode="disabled" android:gravity="center" >
+</bitmap>
+<!-- From: file:/home/jeff/Development/grapevine/clients/Android/Grapevine/caldroid/src/main/res/drawable/left_arrow.xml --><!-- From: file:/home/jeff/Development/grapevine/clients/Android/Grapevine/caldroid/build/intermediates/bundles/debug/res/drawable/left_arrow.xml -->

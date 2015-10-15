@@ -20,8 +20,9 @@
     "chai": "^3.3.0",
     "chrono-node": "^1.0.8",
     "coffee-script": "^1.10.0",
-    "dotenv": "^1.2.0",
+    "dotenv-with-overload": "^0.5.1",
     "express": "^4.13.3",
+    "jwt-simple": "^0.3.1",
     "morgan": "^1.6.1",
     "request": "^2.61.0"
   }
