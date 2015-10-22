@@ -5,20 +5,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.ListView;
+
+import com.google.gson.Gson;
+
+import java.util.List;
+
+import cs.lmu.grapevine.Entities.Event;
+import cs.lmu.grapevine.requests.EventFeedRequest;
 
 public class FeedEvents extends AppCompatActivity {
+    Gson gson = new Gson();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_events);
-        Intent loginIntent = getIntent();
-        String jwt = loginIntent.getStringExtra("JWT");
+        ListView eventFeed = (ListView)findViewById(R.id.event_feed);
+        eventFeed.setOnItemClickListener(new EventListClickListener(this));
 
-        //print out the jwt received from the login response
-        TextView eventFeed = (TextView)(findViewById(R.id.event_feed));
-        eventFeed.setText(jwt);
+        EventFeedRequest getUserEvents = new EventFeedRequest(this);
+        MainActivity.httpRequestQueue.add(getUserEvents);
     }
 
     @Override

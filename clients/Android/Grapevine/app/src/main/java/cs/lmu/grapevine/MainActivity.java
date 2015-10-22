@@ -12,7 +12,6 @@ import android.os.Build;
 import android.provider.ContactsContract;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -21,28 +20,21 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import cs.lmu.grapevine.requests.LoginRequest;
+
 public class MainActivity extends Activity implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    // UI references.
-    private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
-    RequestQueue queue;
+    public static String               authenticationToken;
+    public static int                  userId;
+    public static AutoCompleteTextView mEmailView;
+    private       EditText             mPasswordView;
+    public static RequestQueue         httpRequestQueue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +50,7 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
                     return true;
                 }
                 return false;
+
             }
         });
 
@@ -69,7 +62,8 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
             }
         });
 
-        queue = Volley.newRequestQueue(this);
+        httpRequestQueue = Volley.newRequestQueue(this);
+        authenticationToken = null;
     }
 
     /**
@@ -88,7 +82,7 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    public void attemptLogin() {
+    public void attemptLogin(){
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
@@ -99,14 +93,14 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
 
         boolean cancel = false;
         View focusView = null;
-
+/*
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
         }
-
+/*
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(R.string.error_field_required));
@@ -117,38 +111,24 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
             focusView = mEmailView;
             cancel = true;
         }
-
+*/
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
         } else {
+            String userEmail = mEmailView.getText().toString();
+            String userPassword = mPasswordView.getText().toString();
 
-            JSONObject requestBody = null;
-            try {
-                requestBody = new JSONObject("{\"username\":\"jeff\",\"password\":\"blah\"}");
-            }
-            catch (JSONException e) {
-                Log.d("exception","JSON was not serialized correctly");
-            }
+            String requestBodyString =
+                    "{\"username\":\""
+                     + userEmail
+                     + "\",\"password\":\""
+                     + userPassword
+                     + "\"}";
 
-            String loginUrl ="http://10.0.1.199:8000/login";
-            JsonObjectRequest userLoginRequest = new JsonObjectRequest(Request.Method.POST, loginUrl, requestBody, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    Intent userLogin = new Intent(getApplicationContext(), FeedEvents.class);
-                    userLogin.putExtra("JWT", response.toString());
-                    startActivity(userLogin);
-                }
-
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    TextView loginStatus = (TextView)findViewById(R.id.login_status);
-                    loginStatus.setText(R.string.login_error);
-                }
-            });
-            queue.add(userLoginRequest);
+            LoginRequest userLoginRequest = new LoginRequest(this, requestBodyString);
+            httpRequestQueue.add(userLoginRequest);
         }
     }
 
@@ -204,7 +184,6 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
         int IS_PRIMARY = 1;
     }
 
-
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
@@ -214,14 +193,8 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
         mEmailView.setAdapter(adapter);
     }
 
-
     public void launchCreateAccountActivity(View view) {
-        Intent createNewAccount = new Intent(getApplicationContext(), CreateNewAccount.class);
+        Intent createNewAccount = new Intent(getApplicationContext(), RegisterUser.class);
         startActivity(createNewAccount);
-    }
-
-    public void bypassLogin(View view) {
-        Intent launchFeed = new Intent(getApplicationContext(), FeedEvents.class);
-        startActivity(launchFeed);
     }
 }

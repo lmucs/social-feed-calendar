@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
                             let responseToken = Mapper<Token>().map(response.2.value)
                             print("\(responseToken!.token) \n")
                             self.userToken = responseToken
-                            print("\(self.userToken.token)")
+                            print("\(self.userToken.token!)")
                             //self.token.xkey = "matt"
                             self.performSegueWithIdentifier("loginSegue", sender: self)
                         }

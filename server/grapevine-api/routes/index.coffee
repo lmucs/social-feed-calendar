@@ -1,25 +1,24 @@
 express  = require 'express'
 auth     = require './auth'
+users    = require './users'
 events   = require './events'
-user     = require './users'
+feeds    = require './feeds'
 
 router   = express.Router()
 
 # Routes that can be accessed by any one
-router.post '/login', auth.login
+router.post '/register', auth.register
+router.post '/login',    auth.login
 
 #  Routes that can be accessed only by autheticated users
-router.get '/api/v1/events', events.getAll
-router.get '/api/v1/events/:id', events.getOne
-router.post '/api/v1/events/', events.create
-router.put '/api/v1/events/:id', events.update
-router.delete '/api/v1/events/:id', events.delete
+router.get    '/api/v1/feeds',                                     feeds.getAll
+router.get    '/api/v1/users/:userID/events',                      users.getAllUserEvents
+router.get    '/api/v1/users/:userID/events/:timestamp',           users.getLatestUserEvents
+router.post   '/api/v1/users/:userID/feeds',                       users.followFeed
+router.delete '/api/v1/users/:userID/feeds/:sourceName/:feedName', users.unfollowFeed
 
 # Routes that can be accessed only by authenticated & authorized users
-router.get '/api/v1/admin/users', user.getAll
-router.get '/api/v1/admin/user/:id', user.getOne
-router.post '/api/v1/admin/user/', user.create
-router.put '/api/v1/admin/user/:id', user.update
-router.delete '/api/v1/admin/user/:id', user.delete
+# post event?
+# get all users?
 
 module.exports = router

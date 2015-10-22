@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/grapevine_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CreateNewAccount"
+            android:name=".RegisterUser"
             android:label="@string/title_activity_create_new_account"
             android:parentActivityName=".MainActivity" >
             <meta-data
@@ -32,11 +32,19 @@
         </activity>
         <activity
             android:name=".FeedEvents"
-            android:label="@string/event_feed">
+            android:label="@string/event_feed" >
         </activity>
         <activity
             android:name=".CalendarView"
             android:label="@string/calendar_view"
+            android:parentActivityName=".FeedEvents" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cs.lmu.grapevine.FeedEvents" />
+        </activity>
+        <activity
+            android:name=".ViewEvent"
+            android:label="@string/title_activity_view_event"
             android:parentActivityName=".FeedEvents" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

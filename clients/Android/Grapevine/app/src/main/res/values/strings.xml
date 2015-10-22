@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">Grapevine</string>
     <string name="event_feed">Event Feed</string>
-
     <string name="action_settings">Settings</string>
-
     <string name="title_activity_create_new_account">New Account</string>
     <string name="create_account_email">Email</string>
     <string name="create_account_first_name">First Name</string>
@@ -11,10 +9,13 @@
     <string name="create_account_username">Username</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="login_error">There was a problem logging in.</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="general_login_error">Oh noes! There was a problem logging in.</string>
+    <string name="event_request_error">There was an error retrieving events from the server.</string>
     <string name="title_activity_calendar_view">CalendarView</string>
     <string name="calendar_view">Calendar View</string>
-
+    <string name="title_activity_view_event">View Event</string>
+    <string name="auth_failure_message">You entered an incorrect username or password. Please try again.</string>
+    <string name="account_exists">An account already exists with that username. Please choose another.</string>
+    <string name="register_user_success">Account created</string>
+    <string name="register_user_general_error">Whoops. There was a problem registering account. Please try again later.</string>
 </resources>

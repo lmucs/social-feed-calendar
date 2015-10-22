@@ -1,37 +1,41 @@
 package cs.lmu.grapevine.Entities;
 
-import android.location.Location;
-import java.sql.Date;
-import java.sql.Time;
+import com.google.gson.annotations.SerializedName;
 
-public class Event {
+import java.io.Serializable;
+import java.sql.Date;
+
+public class Event implements Serializable {
     private String title;
     private Date date;
+    private boolean allDay;
     private String status;
     private int id;
-    private Time timeProcessed;
-    private Location location;
-    private Time startTime;
-    private Time endTime;
+    private long timestamp;
+    private String location;
+    @SerializedName("startTime")
+    private long startTimeTimestamp;
+    @SerializedName("endTime")
+    private long endTimeTimestamp;
     private boolean repeatsWeekly;
     private String[] tags;
     private String URL;
+    private String origin;
+    private String post;
 
-    public Event(String title) {
-
+    private Event(String title) {
         this.title = title;
     }
 
     public String getTitle() {
-
         return title;
     }
 
-    public void setTitle(String title) {
+    public  void setTitle(String title) {
         this.title = title;
     }
 
-    public Date getDate() {
+    public  Date getDate() {
         return date;
     }
 
@@ -55,36 +59,36 @@ public class Event {
         this.id = id;
     }
 
-    public Time getTimeProcessed() {
-        return timeProcessed;
+    public long getTimeProcessed() {
+        return timestamp;
     }
 
-    public void setTimeProcessed(Time timeProcessed) {
-        this.timeProcessed = timeProcessed;
+    public void setTimeProcessed(int timeProcessed) {
+        this.timestamp = timeProcessed;
     }
 
-    public Location getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public Time getStartTime() {
-        return startTime;
+    public long getStartTimeTimestamp() {
+        return startTimeTimestamp;
     }
 
-    public void setStartTime(Time startTime) {
-        this.startTime = startTime;
+    public void setStartTimeTimestamp(int startTimeTimestamp) {
+        this.startTimeTimestamp = startTimeTimestamp;
     }
 
-    public Time getEndTime() {
-        return endTime;
+    public long getEndTimeTimestamp() {
+        return endTimeTimestamp;
     }
 
-    public void setEndTime(Time endTime) {
-        this.endTime = endTime;
+    public void setEndTimeTimestamp(int endTimeTimestamp) {
+        this.endTimeTimestamp = endTimeTimestamp;
     }
 
     public boolean isRepeatsWeekly() {
@@ -109,6 +113,30 @@ public class Event {
 
     public void setURL(String URL) {
         this.URL = URL;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public boolean isAllDay() {
+        return allDay;
+    }
+
+    public void setAllDay(boolean allDay) {
+        this.allDay = allDay;
     }
 
     @Override
