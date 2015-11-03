@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.Login"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,32 +23,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterUser"
+            android:name=".activities.RegisterUser"
             android:label="@string/title_activity_create_new_account"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".activities.Login" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cs.lmu.grapevine.MainActivity" />
+                android:value=".activities.Login" />
         </activity>
         <activity
-            android:name=".FeedEvents"
+            android:name=".activities.EventFeed"
             android:label="@string/event_feed" >
         </activity>
         <activity
-            android:name=".CalendarView"
+            android:name=".activities.CalendarView"
             android:label="@string/calendar_view"
-            android:parentActivityName=".FeedEvents" >
+            android:parentActivityName=".activities.EventFeed" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cs.lmu.grapevine.FeedEvents" />
+                android:value=".activities.EventFeed" />
         </activity>
         <activity
-            android:name=".ViewEvent"
+            android:name=".activities.ViewEvent"
             android:label="@string/title_activity_view_event"
-            android:parentActivityName=".FeedEvents" >
+            android:parentActivityName=".activities.EventFeed" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cs.lmu.grapevine.FeedEvents" />
+                android:value=".activities.EventFeed" />
+        </activity>
+        <activity
+            android:name=".activities.AddGroup"
+            android:label="@string/title_activity_add_group" >
         </activity>
     </application>
 

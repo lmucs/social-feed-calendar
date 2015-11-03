@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5FA93CA8DA23E6CFA3E6CD8E"
+               BlueprintIdentifier = "796508467A659545F57CA9C3"
                BuildableName = "Pods_Grapevine.framework"
                BlueprintName = "Pods-Grapevine"
                ReferencedContainer = "container:Pods.xcodeproj">

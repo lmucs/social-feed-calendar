@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="red" type="color">#FFFF4444</item>
+    <color name="red" type="color">#FFFF4444</color>
+    <color name="facebook">#3b5998</color>
+    <color name="twitter">#4099FF</color>
 
 </resources>

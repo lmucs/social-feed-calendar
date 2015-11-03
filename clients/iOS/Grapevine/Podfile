@@ -6,4 +6,5 @@ target 'Grapevine' do
     pod 'ObjectMapper', '~> 0.17'
     pod 'AlamofireObjectMapper', '~> 1.0'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'CVCalendar', '~> 1.2.7'
 end

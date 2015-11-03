@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="create_account_password_margin">20dp</dimen>
     <dimen name="event_title_size">27sp</dimen>
+    <dimen name="radio_button_size">25sp</dimen>
 </resources>

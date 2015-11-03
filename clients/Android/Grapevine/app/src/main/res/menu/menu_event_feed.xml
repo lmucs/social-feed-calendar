@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context="cs.lmu.grapevine.activities.EventFeed">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_launch_calendar" android:title="@string/calendar_view"
+        android:orderInCategory="5" app:showAsAction="always" android:icon="@drawable/ic_today_white_48dp"/>
+    <item android:id="@+id/action_add_group" android:title="@string/add_group" android:icon="@drawable/ic_add_box_white_48dp"
+        android:orderInCategory="100" app:showAsAction="always"/>
+</menu>

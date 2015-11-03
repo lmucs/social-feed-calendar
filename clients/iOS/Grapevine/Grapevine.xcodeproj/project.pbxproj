@@ -15,6 +15,7 @@
 		F121A15D1B9F56E2008E3F7A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F121A15B1B9F56E2008E3F7A /* LaunchScreen.xib */; };
 		F121A1691B9F56E2008E3F7A /* GrapevineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F121A1681B9F56E2008E3F7A /* GrapevineTests.swift */; };
 		F125667C1BC4B49700EDFA36 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125667B1BC4B49700EDFA36 /* Token.swift */; settings = {ASSET_TAGS = (); }; };
+		F14B2A361BD2DD9B00C1E17E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F17935681BBAFD3B001F8791 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17935671BBAFD3B001F8791 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
 		F1A37D1D1BBDBEE70094541C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A37D1C1BBDBEE60094541C /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		F1ECD65B1BA88895001FFD58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD65A1BA88895001FFD58 /* LoginViewController.swift */; };
@@ -48,6 +49,7 @@
 		F121A1671B9F56E2008E3F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F121A1681B9F56E2008E3F7A /* GrapevineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapevineTests.swift; sourceTree = "<group>"; };
 		F125667B1BC4B49700EDFA36 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F17935671BBAFD3B001F8791 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F1A37D1C1BBDBEE60094541C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F1ECD65A1BA88895001FFD58 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				F121A14F1B9F56E2008E3F7A /* AppDelegate.swift */,
 				F121A1561B9F56E2008E3F7A /* Main.storyboard */,
+				F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */,
 				F1ECD6621BA8A1E0001FFD58 /* EventTableViewCell.swift */,
 				F1ECD65E1BA89FE6001FFD58 /* EventListTableViewController.swift */,
 				F1ECD65C1BA894CB001FFD58 /* CreateAccountViewController.swift */,
@@ -317,6 +320,7 @@
 				F121A1501B9F56E2008E3F7A /* AppDelegate.swift in Sources */,
 				F1A37D1D1BBDBEE70094541C /* User.swift in Sources */,
 				F1ECD6631BA8A1E0001FFD58 /* EventTableViewCell.swift in Sources */,
+				F14B2A361BD2DD9B00C1E17E /* CalendarViewController.swift in Sources */,
 				F17935681BBAFD3B001F8791 /* Event.swift in Sources */,
 				F121A1531B9F56E2008E3F7A /* Grapevine.xcdatamodeld in Sources */,
 			);

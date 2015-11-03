@@ -20,6 +20,9 @@ twitterRouter.get '/posts/:screenName/:sinceID?', (req, res) ->
   url += "&since_id#{req.params.sinceID}" if req.params.sinceID
 
   request.get {url, oauth}, (error, response, body) ->
+    parsedBody = JSON.parse body
+    if parsedBody.errors?.length > 0
+      return res.status(400).json parsedBody
     res.send body
 
 module.exports = twitterRouter

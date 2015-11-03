@@ -1,4 +1,4 @@
-pgClient = require '../pg-client'
+pgClient = require '../../../database/pg-client'
 
 feeds =
   getAll: (req, res) ->

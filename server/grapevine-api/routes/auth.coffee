@@ -1,8 +1,10 @@
 jwt      = require 'jwt-simple'
-pgClient = require '../pg-client'
+pgClient = require '../../../database/pg-client'
 
 auth =
   register: (req, res) ->
+    unless req.body.username and req.body.password
+      return res.status(400).json 'message': 'username and password required'
     insertUser req.body.username, req.body.password, (err) ->
       if err
         return res.status(400).json (
@@ -17,7 +19,7 @@ auth =
     getUser req.body.username, req.body.password, (err, user) ->
       return res.status(400).json err if err
       return res.status(401).json 'message': 'invalid credentials' unless user
-      token = generateToken()
+      token = generateToken user
       res.status(200).json {token, userID: user.user_id}
 
 insertUser = (username, password, callback) ->
@@ -34,9 +36,9 @@ getUser = (username, password, callback) ->
     return callback err if err
     callback null, result.rows[0]
 
-generateToken = ->
+generateToken = (user) ->
   expires = expiresIn(7)
-  token = jwt.encode { expires }, require('../config/secret')()
+  token = jwt.encode { expires, user }, require('../config/secret')()
   token
 
 expiresIn = (numDays) ->

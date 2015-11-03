@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CVCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,37 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0BBA2654CB5ACEB637CC0E9339209CE6</key>
+		<key>0287A9F5816D044D6FC4AC5A3AD9CA4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0FD4AE5C563E7338F9BA0AE7A090B964</key>
+		<key>5DF25648321329765231BFAA3024A3F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>76B644F413BA8C0F6D1BDB97184FD0D7</key>
+		<key>7A85AD703E05C97134CC3B921CE06522</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93B1D83760F7C30F67937102290725F0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A6FCC1D1701B2550FDDB314342F1984D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B152CB698E5435BCC0BCE517EA81420C</key>
+		<key>8F13059F60BAAE367F999E472C2C7060</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8E5C3A8F4A11146A455B96A016F7AA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

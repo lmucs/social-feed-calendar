@@ -3,12 +3,14 @@ PODS:
   - AlamofireObjectMapper (1.0):
     - Alamofire (~> 2.0.0)
     - ObjectMapper (= 0.17)
+  - CVCalendar (1.2.7)
   - ObjectMapper (0.17)
   - SwiftyJSON (2.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 2.0)
   - AlamofireObjectMapper (~> 1.0)
+  - CVCalendar (~> 1.2.7)
   - ObjectMapper (~> 0.17)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
@@ -24,6 +26,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
   AlamofireObjectMapper: 4f9d766a4742bb69258921723bafc260849f216c
+  CVCalendar: 1ae6ee62dd7fd4c6a6703a43c641e11dfd32276e
   ObjectMapper: fa286b7cb5a398f1b0d8d64d0dd33fd1b307022c
   SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
 

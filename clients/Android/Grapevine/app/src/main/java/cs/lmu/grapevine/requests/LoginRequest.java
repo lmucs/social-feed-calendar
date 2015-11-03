@@ -3,8 +3,8 @@ package cs.lmu.grapevine.requests;
 import android.app.Activity;
 import com.android.volley.toolbox.JsonObjectRequest;
 import cs.lmu.grapevine.BuildConfig;
-import cs.lmu.grapevine.requests.listeners.LoginErrorListener;
-import cs.lmu.grapevine.requests.listeners.LoginSuccessListener;
+import cs.lmu.grapevine.requests.listeners.error.LoginErrorListener;
+import cs.lmu.grapevine.requests.listeners.success.LoginSuccessListener;
 
 /**
  * Un-authenticated request for logging in to Grapevine.

@@ -12,10 +12,16 @@
     <string name="general_login_error">Oh noes! There was a problem logging in.</string>
     <string name="event_request_error">There was an error retrieving events from the server.</string>
     <string name="title_activity_calendar_view">CalendarView</string>
-    <string name="calendar_view">Calendar View</string>
-    <string name="title_activity_view_event">View Event</string>
+    <string name="calendar_view">Calendar</string>
+    <string name="title_activity_view_event">Event</string>
     <string name="auth_failure_message">You entered an incorrect username or password. Please try again.</string>
     <string name="account_exists">An account already exists with that username. Please choose another.</string>
     <string name="register_user_success">Account created</string>
     <string name="register_user_general_error">Whoops. There was a problem registering account. Please try again later.</string>
+    <string name="event_list_empty">It looks like there are no events in your grapevine. Try adding some groups and we\'ll tell you what they\'ve planned :)</string>
+    <string name="add_group">Add group</string>
+    <string name="title_activity_add_group">AddGroup</string>
+    <string name="add_group_hint">Group name</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
 </resources>
