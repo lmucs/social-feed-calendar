@@ -50,16 +50,6 @@ describe 'Grapevine API', ->
             (res.body.message).should.be.eql 'method not allowed'
             done()
 
-    context 'when an invalid method is used for /api/v1/feeds', ->
-      it 'responds with a 405 method not allowed', (done) ->
-        request 'http://localhost:8000'
-          .post '/api/v1/feeds'
-          .end (err, res) ->
-            throw err if err
-            (res.status).should.be.eql 405
-            (res.body.message).should.be.eql 'method not allowed'
-            done()
-
     context 'when an invalid method is used for /api/v1/users/{userID}/events', ->
       it 'responds with a 405 method not allowed', (done) ->
         request 'http://localhost:8000'
@@ -93,7 +83,7 @@ describe 'Grapevine API', ->
     context 'when an invalid method is used for /admin/v1/feeds', ->
       it 'responds with a 405 method not allowed', (done) ->
         request 'http://localhost:8000'
-          .get '/admin/v1/feeds'
+          .delete '/admin/v1/feeds'
           .end (err, res) ->
             throw err if err
             (res.status).should.be.eql 405
@@ -212,53 +202,6 @@ describe 'Grapevine API', ->
               should.exist userID
               done()
 
-    context 'when a client GETs from the /api/v1/feeds endpoint', ->
-
-      context 'when the client omits the access token from the headers', ->
-        it 'responds with a 401 unauthorized', (done) ->
-          request 'http://localhost:8000'
-            .get '/api/v1/feeds'
-            .end (err, res) ->
-              throw err if err
-              (res.status).should.be.eql 401
-              (res.body.message).should.be.eql 'access token required'
-              done()
-
-      context 'when the client does not omit the access token', ->
-
-        context 'when an invalid access token is given', ->
-          it 'responds with a 401 unauthorized', (done) ->
-            request 'http://localhost:8000'
-              .get '/api/v1/feeds'
-              .set 'x-access-token', 'invalid-access-token'
-              .end (err, res) ->
-                throw err if err
-                (res.status).should.be.eql 401
-                (res.body.message).should.be.eql 'invalid access token'
-                done()
-
-        context 'when a valid access token is given', ->
-          beforeEach (done) ->
-            request 'http://localhost:8000'
-              .post '/api/v1/users'
-              .send {username: 'foo', password: 'bar'}
-              .end (err, res) =>
-                throw err if err
-                @token = res.body.token
-                done()
-          it 'responds with a 200 OK and all feeds Grapevine currently pulls from', (done) ->
-            @db.query 'INSERT INTO feeds (feed_name, network_name, last_pulled) VALUES (\'LMUHousing\', \'facebook\', 123)'
-            request 'http://localhost:8000'
-              .get '/api/v1/feeds'
-              .set 'x-access-token', @token
-              .end (err, res) ->
-                throw err if err
-                (res.status).should.be.eql 200
-                (res.body).should.be.eql
-                  facebook: ['LMUHousing']
-                  twitter: process.env.TWITTER_LIST_ID
-                  lastPulled: '123'
-                done()
 
     context 'when a client GETs from the /api/v1/users/{userID}/events endpoint', ->
 
@@ -497,6 +440,79 @@ describe 'Grapevine API', ->
                 (res.status).should.be.eql 200
                 (res.body.message).should.be.eql 'successfully unfollowed LMUHousing for userID 1'
                 done()
+
+
+    context 'when a client GETs from the /api/v1/feeds endpoint', ->
+
+      context 'when the client omits the access token', ->
+        it 'responds with a 401 unauthorized', (done) ->
+          request 'http://localhost:8000'
+            .get '/admin/v1/feeds'
+            .end (err, res) ->
+              throw err if err
+              (res.status).should.be.eql 401
+              (res.body.message).should.be.eql 'access token required'
+              done()
+
+      context 'when the client does not omit the access token', ->
+
+        context 'when an invalid access token is given', ->
+          it 'responds with a 401 unauthorized', (done) ->
+            request 'http://localhost:8000'
+              .get '/admin/v1/feeds'
+              .set 'x-access-token', 'invalid-access-token'
+              .end (err, res) ->
+                throw err if err
+                (res.status).should.be.eql 401
+                (res.body.message).should.be.eql 'invalid access token'
+                done()
+
+        context 'when a valid access token is given', ->
+
+          context 'when the user is not an admin', ->
+            beforeEach (done) ->
+              request 'http://localhost:8000'
+                .post '/api/v1/users'
+                .send {username: 'foo', password: 'bar'}
+                .end (err, res) =>
+                  throw err if err
+                  @token = res.body.token
+                  done()
+
+            it 'responds with a 403 forbidden', (done) ->
+              request 'http://localhost:8000'
+                .get '/admin/v1/feeds'
+                .set 'x-access-token', @token
+                .end (err, res) ->
+                  throw err if err
+                  (res.status).should.be.eql 403
+                  done()
+
+          context 'when the user is an admin', ->
+            beforeEach (done) ->
+              @db.query 'INSERT INTO users (user_id, username, password, role)
+                         VALUES (1, \'foo\', crypt(\'bar\', gen_salt(\'md5\')), \'admin\');'
+              request 'http://localhost:8000'
+                .post '/api/v1/tokens'
+                .send {username: 'foo', password: 'bar'}
+                .end (err, res) =>
+                  throw err if err
+                  @token = res.body.token
+                  done()
+
+              it 'responds with a 200 OK and all feeds Grapevine currently pulls from', (done) ->
+                @db.query 'INSERT INTO feeds (feed_name, network_name) VALUES (\'LMUHousing\', \'facebook\')'
+                request 'http://localhost:8000'
+                  .get '/admin/v1/feeds'
+                  .set 'x-access-token', @token
+                  .end (err, res) ->
+                    throw err if err
+                    (res.status).should.be.eql 200
+                    (res.body).should.be.eql
+                      facebook: ['LMUHousing']
+                      twitter: process.env.TWITTER_LIST_ID
+                      lastPulled: '0'
+                    done()
 
     context 'when a client PUTs to the /admin/v1/feeds endpoint', ->
 

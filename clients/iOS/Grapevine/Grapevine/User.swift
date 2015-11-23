@@ -15,6 +15,7 @@ class User: NSObject, Mappable {
     var firstName: String!
     var lastName: String!
     var email: String!
+    var userID: Int!
     
     required init?(_ map: Map){
         
@@ -22,11 +23,13 @@ class User: NSObject, Mappable {
     
     //Requirement for Mappable
     func mapping(map: Map) {
-        username <- map["username"]
-        password <- map["password"]
-        firstName <- map["firstName"]
-        lastName <- map["lastName"]
-        email <- map["email"]
+        self.username <- map["username"]
+        self.password <- map["password"]
+        self.firstName <- map["firstName"]
+        self.lastName <- map["lastName"]
+        self.email <- map["email"]
+        self.userID <- map["userID"]
+        
     }
     
     

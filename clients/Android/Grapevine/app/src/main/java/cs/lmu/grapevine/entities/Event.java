@@ -3,28 +3,62 @@ package cs.lmu.grapevine.entities;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 /**
  * Represents a database Event entity.
  */
 public class Event implements Serializable {
     private String title;
-    private Date date;
-    private boolean allDay;
-    private String status;
-    private int id;
-    private long timestamp;
+    @SerializedName("event_id")
+    private int eventId;
+    @SerializedName("time_processed")
+    private long timeProcessed;
     private String location;
-    @SerializedName("startTime")
+    @SerializedName("start_time")
     private long startTimeTimestamp;
-    @SerializedName("endTime")
+    @SerializedName("end_time")
     private long endTimeTimestamp;
     private boolean repeatsWeekly;
     private String[] tags;
-    private String URL;
-    private String origin;
-    private String post;
+    private String url;
+    @SerializedName("postcontent")
+    private String postContent;
+    @SerializedName("feed_id")
+    private int feedId;
+
+    public static int MILLISECONDS_PER_SECOND = 1000;
+
+    public int getFeedId() {
+        return feedId;
+    }
+
+    public void setFeedId(int feedId) {
+        this.feedId = feedId;
+    }
+
+    public void setEndTimeTimestamp(long endTimeTimestamp) {
+        this.endTimeTimestamp = endTimeTimestamp;
+    }
+
+    public void setStartTimeTimestamp(long startTimeTimestamp) {
+        this.startTimeTimestamp = startTimeTimestamp;
+    }
+
+    public long getTimeProcessed() {
+        return timeProcessed;
+    }
+
+    public void setTimeProcessed(long timeProcessed) {
+        this.timeProcessed = timeProcessed;
+    }
+
+    public int getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
+    }
 
     private Event(String title) {
         this.title = title;
@@ -36,38 +70,6 @@ public class Event implements Serializable {
 
     public  void setTitle(String title) {
         this.title = title;
-    }
-
-    public  Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public long getTimeProcessed() {
-        return timestamp;
-    }
-
-    public void setTimeProcessed(int timeProcessed) {
-        this.timestamp = timeProcessed;
     }
 
     public String getLocation() {
@@ -110,36 +112,20 @@ public class Event implements Serializable {
         this.tags = tags;
     }
 
-    public String getURL() {
-        return URL;
+    public String getUrl() {
+        return url;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getPost() {
-        return post;
+        return postContent;
     }
 
     public void setPost(String post) {
-        this.post = post;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
-    public boolean isAllDay() {
-        return allDay;
-    }
-
-    public void setAllDay(boolean allDay) {
-        this.allDay = allDay;
+        this.postContent = post;
     }
 
     @Override
@@ -149,11 +135,11 @@ public class Event implements Serializable {
 
         Event event = (Event) o;
 
-        return id == event.id;
+        return eventId == event.eventId;
     }
 
     @Override
     public int hashCode() {
-        return id;
+        return eventId;
     }
 }

@@ -28,8 +28,6 @@ app.post '/api/v1/tokens', tokens.create
 app.all  '/api/v1/tokens', methodNotAllowed
 
 #  Routes that can be accessed only by autheticated users
-app.get    '/api/v1/feeds',                                      [auth, feeds.getAll]
-app.all    '/api/v1/feeds',                                      methodNotAllowed
 app.get    '/api/v1/users/:userID/events',                       [auth, users.getAllEvents]
 app.all    '/api/v1/users/:userID/events',                       methodNotAllowed
 app.get    '/api/v1/users/:userID/events/:after',                [auth, users.getLatestEvents]
@@ -40,6 +38,7 @@ app.delete '/api/v1/users/:userID/feeds/:networkName/:feedName', [auth, users.un
 app.all    '/api/v1/users/:userID/feeds/:networkName/:feedName', methodNotAllowed
 
 # Routes that can be accessed only by authenticated & authorized users
+app.get  '/admin/v1/feeds',         [auth, feeds.getAll]
 app.put  '/admin/v1/feeds/',        [auth, feeds.update]
 app.all  '/admin/v1/feeds',         methodNotAllowed
 app.post '/admin/v1/events',        [auth, events.create]

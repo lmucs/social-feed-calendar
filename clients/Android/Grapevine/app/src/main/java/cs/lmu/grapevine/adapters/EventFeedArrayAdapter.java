@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import java.util.ArrayList;
+import java.sql.Date;
 import cs.lmu.grapevine.entities.Event;
 import cs.lmu.grapevine.R;
 
@@ -14,6 +15,7 @@ import cs.lmu.grapevine.R;
  * Renders the views for the event feed from an ArrayList of events.
  */
 public class EventFeedArrayAdapter extends ArrayAdapter<Event> {
+
 
     public EventFeedArrayAdapter(Context context, ArrayList<Event> events) {
         super(context, 0, events);
@@ -29,10 +31,11 @@ public class EventFeedArrayAdapter extends ArrayAdapter<Event> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.event_list_view, parent, false);
         }
         TextView eventNameView = (TextView) convertView.findViewById(R.id.event_title);
-        TextView eventDateView = (TextView)  convertView.findViewById(R.id.event_date);
+        TextView eventDateView = (TextView) convertView.findViewById(R.id.event_date);
 
         eventNameView.setText(event.getTitle());
-        eventDateView.setText(event.getDate().toString());
+        Date eventStartTime = new Date(event.getStartTimeTimestamp() * Event.MILLISECONDS_PER_SECOND);
+        eventDateView.setText(eventStartTime.toString());
         return convertView;
     }
 }

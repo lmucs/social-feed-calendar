@@ -11,6 +11,9 @@ import CVCalendar
 
 class CalendarViewController: UIViewController, CVCalendarViewDelegate, CVCalendarMenuViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    var events: [Event]!
+    var filteredEvents: [Event]!
+    
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var tableView: UITableView!
@@ -36,36 +39,7 @@ class CalendarViewController: UIViewController, CVCalendarViewDelegate, CVCalend
         menuView.commitMenuViewUpdate()
     }
     
-    func monthIntToMonthString(date: CVDate) -> String {
-        switch date.month {
-        case 1:
-            return "January"
-        case 2:
-            return "February"
-        case 3:
-            return "March"
-        case 4:
-            return "April"
-        case 5:
-            return "May"
-        case 6:
-            return "June"
-        case 7:
-            return "July"
-        case 8:
-            return "August"
-        case 9:
-            return "September"
-        case 10:
-            return "October"
-        case 11:
-            return "November"
-        case 12:
-            return "Decemeber"
-        default:
-            return "Not a month"
-        }
-    }
+    
     
     @IBAction func todayPressed(){
         
@@ -139,6 +113,34 @@ class CalendarViewController: UIViewController, CVCalendarViewDelegate, CVCalend
         self.title =  monthIntToMonthString(cvDate) + " " + String(cvDate.year)
     }
     
+    func presentedDateUpdated(date: Date){
+        print("date updated")
+        
+        func filterEvents(){
+            print("begin filtering")
+            self.filteredEvents = []
+            for event in events {
+                if event.startTime != nil {
+                    if sameDate(event.startTime, date2: date){
+                        filteredEvents.append(event)
+                    }
+                }
+                else {
+                    if event.date != nil {
+                        if sameDate(event.date, date2: date){
+                            filteredEvents.append(event)
+                            //need to sort by time
+                        }
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        }
+        
+        filterEvents()
+    }
+    
+    
     /*
     * Functions available to be implemented if needed
     
@@ -147,9 +149,6 @@ class CalendarViewController: UIViewController, CVCalendarViewDelegate, CVCalend
     }
     
     
-    func presentedDateUpdated(date: Date){
-    
-    }
     
     func topMarker(shouldDisplayOnDayView dayView: DayView) -> Bool {
     
@@ -210,23 +209,24 @@ class CalendarViewController: UIViewController, CVCalendarViewDelegate, CVCalend
     // Mark: - Table View Delegate Functions
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        if self.filteredEvents != nil {
+            return self.filteredEvents.count
+        }
+        return 0
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("this ran")
         let cell = tableView.dequeueReusableCellWithIdentifier("calendarEventCell", forIndexPath: indexPath) as! EventTableViewCell
-        cell.eventNameLabel.text = "Swag Event"
-        cell.eventTimeLabel.text = "All-day son"
+        cell.eventNameLabel.text = self.filteredEvents[indexPath.row].title
+        cell.eventTimeLabel.text = String(self.filteredEvents[indexPath.row].startTimeNS)
+        cell.eventLocationLabel.text = self.filteredEvents[indexPath.row].location
         return cell
         
     }
@@ -267,19 +267,29 @@ class CalendarViewController: UIViewController, CVCalendarViewDelegate, CVCalend
     }
     */
 
+    func eventAtIndexPath(path: NSIndexPath) -> Event {
+        return self.events[path.row]
+    }
     
-    
-    
-    
+    @IBAction func backToCalendarViewController(segue:UIStoryboardSegue){
+        
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "eventDetailFromCalendar" {
+            let nav = segue.destinationViewController as! UINavigationController
+            let detailView = nav.topViewController as! EventDetailViewController
+            let path = self.tableView.indexPathForSelectedRow!
+            detailView.event = eventAtIndexPath(path)
+            
+        }
     }
-    */
+
 
 }

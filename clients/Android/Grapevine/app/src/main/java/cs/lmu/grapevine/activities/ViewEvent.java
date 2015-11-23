@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import java.sql.Date;
 import cs.lmu.grapevine.entities.Event;
 import cs.lmu.grapevine.R;
 
@@ -53,13 +54,14 @@ public class ViewEvent extends AppCompatActivity {
             eventTitleView.setText(eventToDisplay.getTitle());
         }
         //any event that doesn't have a date shouldn't make it into the database
-        eventDateView.setText(eventToDisplay.getDate().toString());
+        Date eventStartTime = new Date(eventToDisplay.getStartTimeTimestamp() * Event.MILLISECONDS_PER_SECOND);
+        eventDateView.setText(eventStartTime.toString());
 
         if (!eventToDisplay.getLocation().equals(null)) {
             eventLocationView.setText(eventToDisplay.getLocation());
         }
-        if(!eventToDisplay.getURL().equals(null)) {
-            eventUrlView.setText(eventToDisplay.getURL());
+        if(!eventToDisplay.getUrl().equals(null)) {
+            eventUrlView.setText(eventToDisplay.getUrl());
         }
 
     }

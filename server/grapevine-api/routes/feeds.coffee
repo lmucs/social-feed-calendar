@@ -19,7 +19,7 @@ feeds =
       res.status(200).json
         facebook: feeds,
         twitter:  process.env.TWITTER_LIST_ID,
-        lastPulled: result.rows[0].last_pulled
+        lastPulled: result.rows[0]?.last_pulled or 0
 
   insert: (feedName, newtworkName, callback) ->
     if newtworkName is 'twitter'

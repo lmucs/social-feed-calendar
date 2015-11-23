@@ -12,20 +12,17 @@ import ObjectMapper
 class Token: NSObject, Mappable {
     
     var token: String!
-    var xkey: String!
+    var userID: Int!
     
     required init?(_ map: Map){
         
     }
     
     func mapping(map: Map) {
-        self.token <- map["x-access-token"]
-        self.xkey <- map["x-key"]
+        self.token <- map["token"]
+        self.userID <- map["userID"]
         
     }
     
-    func setXKey(xkeyValue: String){
-        self.xkey = xkeyValue
-    }
     
 }

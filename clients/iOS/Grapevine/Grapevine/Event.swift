@@ -8,21 +8,25 @@
 
 import UIKit
 import ObjectMapper
+import CVCalendar
 
 class Event: NSObject, Mappable {
     var title: String!
-    var date: NSDate!
+    var dateNS: NSDate!
+    var date: CVDate!
     var status: String!
-    var id: Int!
+    var eventId: Int!
+    var feedId: Int!
     var timeProcessed: NSDate!
-    var startTime: NSDate!
-    var endTime: NSDate!
-    var repeatsWeekly: Bool!
+    var startTimeNS: NSDate!
+    var startTime: CVDate!
+    var endTimeNS: NSDate!
+    var endTime: CVDate!
+    var repeatsWeekly: Int!
     var tags: [String]!
     var url: String!
-    
-    // Need to figure out correct object
-    //var location: Location!
+    var location: String!
+    var post: String!
     
     // Required to implement ObjectMapper
     required init?(_ map: Map){
@@ -30,17 +34,22 @@ class Event: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        title <- map["title"]
-        date <- map["date"]
-        status <- map["status"]
-        id <- map["id"]
-        timeProcessed <- map["timeProcessed"]
-        startTime <- map["startTime"]
-        endTime <- map["endTime"]
-        repeatsWeekly <- map["repeatsWeekly"]
-        tags <- map["tags"]
-        url <- map["url"]
+        self.title <- map["title"]
+        self.dateNS <- (map["date"], DateTransform())
+        self.status <- map["status"]
+        self.eventId <- map["event_id"]
+        self.feedId <- map["feed_id"]
+        self.timeProcessed <- (map["time_processed"], DateTransform())
+        self.startTimeNS <- (map["start_time"], DateTransform())
+        self.endTimeNS <- (map["end_time"], DateTransform())
+        self.repeatsWeekly <- map["repeats_weekly"]
+        self.tags <- map["tags"]
+        self.url <- map["url"]
+        self.location <- map["location"]
+        self.post <- map["post"]
+        
     }
+    
     
     
 }

@@ -18,9 +18,11 @@
 		F14B2A361BD2DD9B00C1E17E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F17935681BBAFD3B001F8791 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17935671BBAFD3B001F8791 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
 		F1A37D1D1BBDBEE70094541C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A37D1C1BBDBEE60094541C /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		F1A3F64A1BD9A6E700988291 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3F6491BD9A6E700988291 /* HelperMethods.swift */; settings = {ASSET_TAGS = (); }; };
+		F1C5FBED1BFBA54D002DBBA4 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5FBEC1BFBA54D002DBBA4 /* EventDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F1ECD65B1BA88895001FFD58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD65A1BA88895001FFD58 /* LoginViewController.swift */; };
 		F1ECD65D1BA894CB001FFD58 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD65C1BA894CB001FFD58 /* CreateAccountViewController.swift */; };
-		F1ECD65F1BA89FE6001FFD58 /* EventListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD65E1BA89FE6001FFD58 /* EventListTableViewController.swift */; };
+		F1ECD65F1BA89FE6001FFD58 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD65E1BA89FE6001FFD58 /* EventListViewController.swift */; };
 		F1ECD6631BA8A1E0001FFD58 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD6621BA8A1E0001FFD58 /* EventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,9 +54,11 @@
 		F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F17935671BBAFD3B001F8791 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F1A37D1C1BBDBEE60094541C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F1A3F6491BD9A6E700988291 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
+		F1C5FBEC1BFBA54D002DBBA4 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		F1ECD65A1BA88895001FFD58 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F1ECD65C1BA894CB001FFD58 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		F1ECD65E1BA89FE6001FFD58 /* EventListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListTableViewController.swift; sourceTree = "<group>"; };
+		F1ECD65E1BA89FE6001FFD58 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		F1ECD6621BA8A1E0001FFD58 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,9 +123,11 @@
 			children = (
 				F121A14F1B9F56E2008E3F7A /* AppDelegate.swift */,
 				F121A1561B9F56E2008E3F7A /* Main.storyboard */,
+				F1C5FBEC1BFBA54D002DBBA4 /* EventDetailViewController.swift */,
 				F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */,
+				F1A3F6491BD9A6E700988291 /* HelperMethods.swift */,
 				F1ECD6621BA8A1E0001FFD58 /* EventTableViewCell.swift */,
-				F1ECD65E1BA89FE6001FFD58 /* EventListTableViewController.swift */,
+				F1ECD65E1BA89FE6001FFD58 /* EventListViewController.swift */,
 				F1ECD65C1BA894CB001FFD58 /* CreateAccountViewController.swift */,
 				F17935671BBAFD3B001F8791 /* Event.swift */,
 				F1A37D1C1BBDBEE60094541C /* User.swift */,
@@ -315,9 +321,11 @@
 			files = (
 				F125667C1BC4B49700EDFA36 /* Token.swift in Sources */,
 				F1ECD65D1BA894CB001FFD58 /* CreateAccountViewController.swift in Sources */,
-				F1ECD65F1BA89FE6001FFD58 /* EventListTableViewController.swift in Sources */,
+				F1ECD65F1BA89FE6001FFD58 /* EventListViewController.swift in Sources */,
 				F1ECD65B1BA88895001FFD58 /* LoginViewController.swift in Sources */,
 				F121A1501B9F56E2008E3F7A /* AppDelegate.swift in Sources */,
+				F1A3F64A1BD9A6E700988291 /* HelperMethods.swift in Sources */,
+				F1C5FBED1BFBA54D002DBBA4 /* EventDetailViewController.swift in Sources */,
 				F1A37D1D1BBDBEE70094541C /* User.swift in Sources */,
 				F1ECD6631BA8A1E0001FFD58 /* EventTableViewCell.swift in Sources */,
 				F14B2A361BD2DD9B00C1E17E /* CalendarViewController.swift in Sources */,
