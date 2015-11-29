@@ -254,9 +254,11 @@ describe 'Grapevine API', ->
 
               it 'responds with a 200 OK and all events from the feeds the user follows', (done) ->
                 @db.query 'INSERT INTO feeds (feed_id) VALUES (1);
-                           INSERT INTO events (title, feed_id) VALUES (\'Sunset at the Bluff\', 1);
                            INSERT INTO users (user_id) VALUES (1);
                            INSERT INTO user_follows_feed (user_id, feed_id) VALUES (1,1);'
+                @db.query
+                  text: 'INSERT INTO events (title, feed_id, end_time) VALUES (\'Sunset at the Bluff\', 1, $1);'
+                  values: [(new Date).getTime() + 10000]
 
                 request 'http://localhost:8000'
                   .get '/api/v1/users/1/events'
@@ -275,9 +277,12 @@ describe 'Grapevine API', ->
               it 'responds with a 200 OK and all events that have been processed after the timestamp', (done) ->
                 @db.query 'INSERT INTO feeds (feed_id) VALUES (1);
                            INSERT INTO events (title, feed_id, time_processed) VALUES (\'Sunrise at the Bluff\', 1, 123);
-                           INSERT INTO events (title, feed_id, time_processed) VALUES (\'Sunset at the Bluff\', 1, 456);
+                           INSERT INTO events (title, feed_id, time_processed, end_time) VALUES (\'Sunset at the Bluff that already happened\', 1, 456, 0);
                            INSERT INTO users (user_id) VALUES (1);
                            INSERT INTO user_follows_feed (user_id, feed_id) VALUES (1,1);'
+                @db.query
+                  text: 'INSERT INTO events (title, feed_id, time_processed, end_time) VALUES (\'Upcoming Sunset at the Bluff\', 1, 456, $1);'
+                  values: [(new Date).getTime() + 10000]
 
                 request 'http://localhost:8000'
                   .get '/api/v1/users/1/events/200'
@@ -288,7 +293,7 @@ describe 'Grapevine API', ->
                     userEvent = res.body[0]
                     (userEvent.user_id).should.be.eql 1
                     (userEvent.feed_id).should.be.eql 1
-                    (userEvent.title).should.be.eql 'Sunset at the Bluff'
+                    (userEvent.title).should.be.eql 'Upcoming Sunset at the Bluff'
                     done()
 
     context 'when a client POSTs to the /api/v1/users/{userID}/feeds endpoint', ->
