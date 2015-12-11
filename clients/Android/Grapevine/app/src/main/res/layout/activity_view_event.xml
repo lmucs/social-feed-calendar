@@ -48,6 +48,7 @@
                     android:textSize="@dimen/calendar_page_day_text_large"
                     android:gravity="center"
                     android:id="@+id/event_day"/>
+
             </LinearLayout>
         </RelativeLayout>
     <TextView  android:layout_width="wrap_content"
@@ -60,6 +61,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/time"
         android:text="1:00pm - 3:00pm"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tags"
+        android:text="food"
         android:layout_gravity="center"/>
     <TextView
         android:layout_width="wrap_content"

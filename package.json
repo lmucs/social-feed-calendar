@@ -25,7 +25,7 @@
     "async": "^1.5.0",
     "body-parser": "^1.13.3",
     "chai": "^3.4.1",
-    "chrono-node": "^1.0.8",
+    "chrono-node": "joaquinloustau/chrono",
     "coffee-script": "^1.10.0",
     "dotenv-with-overload": "^0.5.1",
     "express": "^4.13.3",

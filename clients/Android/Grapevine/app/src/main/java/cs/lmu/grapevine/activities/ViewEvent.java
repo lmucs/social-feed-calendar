@@ -24,6 +24,7 @@ public class ViewEvent extends AppCompatActivity {
     private TextView eventTitleView;
     private TextView eventDateView;
     private TextView eventLocationView;
+    private TextView tags;
     private TextView eventUrlView;
     private TextView originalPostView;
     private TextView timeView;
@@ -75,6 +76,16 @@ public class ViewEvent extends AppCompatActivity {
             eventTitleView.setText(eventToDisplay.getTitle());
         } else {
             eventTitleView.setText(R.string.untitled_event_title);
+        }
+
+        if (!(eventToDisplay.getTags() == null)){
+            String tagString = "";
+            for (String tag: eventToDisplay.getTags()) {
+                tagString += new String(Character.toChars(getEmojiForTag(tag)));
+            }
+            tags.setText(tagString);
+        } else {
+            tags.setText("");
         }
 
         eventDay.setText(dayInMonth.format(eventToDisplay.getStartDate()));
@@ -129,6 +140,26 @@ public class ViewEvent extends AppCompatActivity {
 
     }
 
+    public static int getEmojiForTag(String tag) {
+        int emojiUnicode = 0;
+        int[] possibleFoodEmojis = new int[]{0x1F372, 0x1F355, 0x1F347, 0x1F34E, 0x1F374, 0x1F355, 0x1F354};
+        int[] possibleEntertainmentEmojis = new int[]{0x1F3A4, 0x2B50, 0x1F0CF, 0x1F3A5, 0x1F3AD};
+        int[] possibleSportsEmojis = new int[]{0x26BD, 0x1F3C8, 0x1F3C1, 0x1F3C0};
+        switch (tag) {
+            case "entertainment": emojiUnicode = possibleEntertainmentEmojis[randomIndex(possibleEntertainmentEmojis.length)];
+                                  break;
+            case "food": emojiUnicode = possibleFoodEmojis[randomIndex(possibleFoodEmojis.length)];
+                         break;
+            case "sports": emojiUnicode = possibleSportsEmojis[randomIndex(possibleSportsEmojis.length)];
+                break;
+        }
+        return emojiUnicode;
+    }
+
+    public static int randomIndex(int upperBound) {
+        return (int) Math.floor(Math.random()*upperBound);
+    }
+
     public static void removeUnderlines(Spannable p_Text) {
         URLSpan[] spans = p_Text.getSpans(0, p_Text.length(), URLSpan.class);
 
@@ -152,5 +183,6 @@ public class ViewEvent extends AppCompatActivity {
         eventMonth        = (TextView) findViewById(R.id.event_month);
         eventDay          = (TextView) findViewById(R.id.event_day);
         feedName          = (TextView) findViewById(R.id.feed_name);
+        tags              = (TextView) findViewById(R.id.tags);
     }
 }
