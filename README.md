@@ -16,9 +16,13 @@ Users provide Grapevine with a list of feeds on Facebook and Twitter that they w
 
 If it finds any events, it stores them and pushes the events to the user. These events are put on the user's Grapevine calendar.
 
-TODO - Insert calendar views of the same event for Android, iOS, and web.
+<img src="https://github.com/lmucs/grapevine/blob/master/images/android-calendar-view.png" width="300" style="margin-right=2em">
+<img src="https://github.com/lmucs/grapevine/blob/master/images/iOSCalendarView.png" width="300">
 
 Events have information such as start time and end time, tags, who posted the event, and a link to the original post.
+
+<img src="https://github.com/lmucs/grapevine/blob/master/images/android-event-view.png" width="300" style="margin-right=2em">
+<img src="https://github.com/lmucs/grapevine/blob/master/images/iOSEventDetail.png" width="300">
 
 
 ## Installation
