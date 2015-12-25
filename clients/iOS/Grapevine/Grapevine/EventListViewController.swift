@@ -18,7 +18,10 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
     var userToken: Token!
     var events: [Event] = []
     var lastUpdated: NSDate!
-    var isLoading: Bool = false
+    var refreshView: UIView!
+    var refreshControl = UIRefreshControl()
+    
+    var tabBarView: GrapevineTabViewController!
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -30,13 +33,36 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         let imageView = UIImageView(image:textLogoSmall)
         imageView.contentMode = .ScaleAspectFit
         self.navigationItem.titleView = imageView
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red:0.81, green:0.66, blue:0.81, alpha:1.0)
+        
+        
+        if let parent = self.navigationController as? GrapevineNavigationController {
+            if let grandparent = parent.tabBarController as? GrapevineTabViewController {
+                self.tabBarView = grandparent
+            }
+        }
+        else {
+            // we should not get here
+        }
+        
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "updateEvents:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView?.addSubview(refreshControl)
+        loadCustomRefreshContents()
+        //self.refreshControl.tintColor = grapevineIndicatorColor
+        self.refreshControl.beginRefreshing()
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadCustomRefreshContents() {
+        let refreshContents = NSBundle.mainBundle().loadNibNamed("RefreshView", owner: self, options: nil)
+        self.refreshView = refreshContents[0] as! UIView
+        self.refreshView.frame = refreshControl.bounds
+        self.refreshControl.addSubview(refreshView)
     }
 
     // MARK: - Table view data source
@@ -52,7 +78,7 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        if self.isLoading {
+        if self.refreshControl.refreshing {
             return self.events.count + 1
         }
         if self.events.count == 0 {
@@ -91,6 +117,7 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
             return cell
         }
         
+        
         func setupOtherCell(cellText: String, animateIndicator: Bool) -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("noEventsCell", forIndexPath: indexPath) as! NoEventsTableViewCell
             cell.label.text = cellText
@@ -99,18 +126,22 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             else {
                 cell.activityIndicator.hidden = true
+                cell.leftImage.hidden = true
+                cell.rightImage.hidden = true
             }
             cell.label.numberOfLines = 0
             return cell
         }
         
-        if self.isLoading {
+        
+        if self.refreshControl.refreshing && self.events.count == 0  {
             if indexPath.row == 0 {
                 let cellText: String = "Loading your events now, \(self.userToken.firstName) \(self.userToken.lastName)!"
-                return setupOtherCell(cellText, animateIndicator: true)
+                return setupOtherCell(cellText, animateIndicator: false)
             }
             return setupEventCell()
         }
+
         
         if events.count == 0 {
             let cellText: String = "You have no events, \(self.userToken.firstName) \(self.userToken.lastName)! Add some feeds to get some!"
@@ -120,14 +151,27 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            removeEvent(indexPath.row)
+        }
+    }
+    
+    func removeEvent(row: Int) {
+        let indexPath = NSIndexPath(forItem: row, inSection: 0)
+        self.events.removeAtIndex(row)
+        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        self.tabBarView.myEvents = self.events
+        self.tabBarView.calendarView.events = self.events
+    }
+    
     @IBAction func backToEventListViewController(segue:UIStoryboardSegue){
         
     }
     
-    @IBAction func updateEvents(sender: UIBarButtonItem){
-        sender.enabled = false
-        getEventsSince(self.lastUpdated)
-        sender.enabled = true
+    @IBAction func updateEvents(sender: AnyObject){
+        tabBarView.getEventsSince(self.lastUpdated)
     }
 
 
@@ -170,81 +214,6 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         return self.events[path.row]
     }
     
-    // MARK: - Network functions
-    
-    func getAllUserEvents(){
-        let getEventsUrl = NSURL(string: apiBaseUrl + "/api/v1/users/" + String(self.userToken.userID!) + "/events")
-        let requestHeader: [String: String] = [
-            "Content-Type": "application/json",
-            "x-access-token": String(self.userToken.token!)
-        ]
-        self.isLoading = true
-        Alamofire.request(.GET, getEventsUrl!, encoding: .JSON, headers: requestHeader)
-            .responseJSON { response in
-                if response.1 != nil {
-                    if response.1?.statusCode == 200 {
-                        let results = response.2.value! as! NSArray
-                        for item in results {
-                            debugPrint(item)
-                            let responseEvent = Mapper<Event>().map(item)
-                            responseEvent?.dateMap(item as! [String : AnyObject])
-                            self.events.append(responseEvent!)
-                        }
-            
-                        self.events.sortInPlace({ $0.startTime.dateNS.compare($1.startTime.dateNS) == NSComparisonResult.OrderedAscending })
-                        self.isLoading = false
-                        self.tableView.reloadData()
-                        self.lastUpdated = NSDate()
-                    }
-                    else {
-                        self.isLoading = false
-                    }
-                }
-                else {
-                    self.isLoading = false
-                }
-            }
-    }
-    
-    func getEventsSince(date: NSDate){
-        let getEventsSinceUrl = NSURL(string: apiBaseUrl + "/api/v1/users/" + String(self.userToken.userID!) + "/events/" + String(Int(self.lastUpdated.timeIntervalSince1970 * 1000)))
-        print(getEventsSinceUrl)
-        let requestHeader: [String: String] = [
-            "Content-Type": "application/json",
-            "x-access-token": String(self.userToken.token!)
-        ]
-        self.isLoading = true
-        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
-        Alamofire.request(.GET, getEventsSinceUrl!, encoding: .JSON, headers: requestHeader)
-            .responseJSON { response in
-                debugPrint(response)
-                if response.1 != nil {
-                    if response.1?.statusCode == 200 {
-                        let results = response.2.value! as! NSArray
-                        for item in results {
-                            debugPrint(item)
-                            let responseEvent = Mapper<Event>().map(item)
-                            responseEvent?.dateMap(item as! [String : AnyObject])
-                            self.events.append(responseEvent!)
-                        }
-                        
-                        self.events.sortInPlace({ $0.startTime.dateNS.compare($1.startTime.dateNS) == NSComparisonResult.OrderedAscending })
-                        self.isLoading = false
-                        self.tableView.reloadData()
-                        self.lastUpdated = NSDate()
-                    }
-                    else {
-                        self.isLoading = false
-                        self.tableView.reloadData()
-                    }
-                }
-                else {
-                    self.isLoading = false
-                    self.tableView.reloadData()
-                }
-            }
-    }
-
     
     // MARK: - Navigation
 
@@ -252,27 +221,13 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if segue.identifier == "goToCalendar" {
-            let nav = segue.destinationViewController as! GrapevineNavigationController
-            let calendarView = nav.topViewController as! CalendarViewController
-            calendarView.events = self.events
-        }
         
         if segue.identifier == "goToEventDetailSegue" {
             let path = self.tableView.indexPathForSelectedRow!
             let nav = segue.destinationViewController as! GrapevineNavigationController
             let detailView = nav.topViewController as! EventDetailViewController
-            detailView.rightBarButton.enabled = false
+            //detailView.rightBarButton.enabled = false
             detailView.event = eventAtIndexPath(path)
-        }
-        
-        if segue.identifier == "goToFeedManagement" {
-            let nav = segue.destinationViewController as! GrapevineNavigationController
-            let feedView = nav.topViewController as! FeedManagementViewController
-            feedView.userToken = self.userToken
-            if feedView.myFeeds.count == 0 {
-                feedView.getFeeds()
-            }
         }
         
         

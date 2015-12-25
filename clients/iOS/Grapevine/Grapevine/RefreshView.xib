@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swag-grape" translatesAutoresizingMaskIntoConstraints="NO" id="1cD-mv-EoU">
+                    <rect key="frame" x="8" y="14" width="30" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="22t-6y-3U0"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swag-grape" translatesAutoresizingMaskIntoConstraints="NO" id="Lll-Ig-LHn">
+                    <rect key="frame" x="562" y="14" width="30" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="qWm-Ff-h8R"/>
+                    </constraints>
+                </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="V6U-g2-LCe">
+                    <rect key="frame" x="282" y="26" width="37" height="37"/>
+                    <color key="color" red="0.27450980390000002" green="0.71764705880000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Lll-Ig-LHn" secondAttribute="bottom" constant="14" id="24F-mK-K8J"/>
+                <constraint firstAttribute="trailing" secondItem="Lll-Ig-LHn" secondAttribute="trailing" constant="8" id="BWe-OT-34s"/>
+                <constraint firstItem="1cD-mv-EoU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="P1Z-lX-Nm9"/>
+                <constraint firstItem="V6U-g2-LCe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZLs-QO-gis"/>
+                <constraint firstItem="V6U-g2-LCe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hrv-Ke-WH9"/>
+                <constraint firstAttribute="bottom" secondItem="1cD-mv-EoU" secondAttribute="bottom" constant="14" id="iWO-Td-ffn"/>
+                <constraint firstItem="1cD-mv-EoU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="nEa-vd-uo0"/>
+                <constraint firstItem="Lll-Ig-LHn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="v0O-N4-m5Q"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="478" y="73"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="swag-grape" width="157" height="290"/>
+    </resources>
+</document>

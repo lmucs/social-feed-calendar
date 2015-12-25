@@ -105,7 +105,7 @@
                         <outlet property="loginFailedLabel" destination="rgt-sx-7ce" id="NcZ-ts-3Sr"/>
                         <outlet property="passwordTextField" destination="QSt-EZ-b3c" id="Lep-l1-guJ"/>
                         <outlet property="usernameTextField" destination="4C9-R4-X1O" id="fKa-uz-t5U"/>
-                        <segue destination="p6z-Ss-da5" kind="show" identifier="loginSegue" id="mco-2s-tLG"/>
+                        <segue destination="ovg-wy-SHM" kind="show" identifier="loginSegue" id="mco-2s-tLG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -275,7 +275,7 @@
                         <outlet property="passwordTextField" destination="IEO-xD-UKg" id="unm-iq-f3c"/>
                         <outlet property="repeatPasswordTextField" destination="24K-6X-3gN" id="VYv-GY-kZd"/>
                         <outlet property="usernameTextField" destination="HDf-zf-Tan" id="GhK-Pd-cvK"/>
-                        <segue destination="p6z-Ss-da5" kind="show" identifier="createAccountSegue" id="YbQ-fN-3ob"/>
+                        <segue destination="ovg-wy-SHM" kind="show" identifier="createAccountSegue" id="YbQ-fN-3ob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mef-dE-V9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,37 +295,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hqc-hy-Lg4">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <color key="backgroundColor" red="0.80645814299999996" green="0.6618920519" blue="0.80996221400000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ldB-n0-nbC"/>
-                                    <barButtonItem systemItem="add" id="an7-o4-jRu">
-                                        <connections>
-                                            <segue destination="Pn3-Bv-ySk" kind="showDetail" identifier="goToFeedManagement" id="F8G-OL-APN"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KqU-yA-6XY"/>
-                                    <barButtonItem image="glyphicons-46-calendar" id="0No-qX-5sT">
-                                        <connections>
-                                            <segue destination="OyG-pm-mSW" kind="showDetail" identifier="goToCalendar" id="Q4j-mo-yL1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7WO-n9-cLK"/>
-                                    <barButtonItem systemItem="refresh" id="pAS-E3-RM9">
-                                        <connections>
-                                            <action selector="updateEvents:" destination="d4C-Ke-usC" id="cbd-w1-Was"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oJW-JU-cj2"/>
-                                </items>
-                            </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YzN-nx-1VJ">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="90" id="awM-dn-rfD" customClass="EventTableViewCell" customModule="Grapevine" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awM-dn-rfD" id="asY-z3-22h">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="89"/>
@@ -404,7 +379,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noEventsCell" rowHeight="90" id="ZN4-lu-aEj" customClass="NoEventsTableViewCell" customModule="Grapevine" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="118" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="182" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZN4-lu-aEj" id="RxV-bZ-Amy">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -462,14 +437,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YzN-nx-1VJ" firstAttribute="top" secondItem="LtW-yP-1El" secondAttribute="bottom" id="73z-Gh-lGb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hqc-hy-Lg4" secondAttribute="trailing" constant="-20" id="8Da-Uz-aS3"/>
-                            <constraint firstItem="Hqc-hy-Lg4" firstAttribute="centerX" secondItem="eWu-qE-XHM" secondAttribute="centerX" id="BtV-0e-Zhy"/>
-                            <constraint firstItem="YzN-nx-1VJ" firstAttribute="leading" secondItem="eWu-qE-XHM" secondAttribute="leadingMargin" constant="-20" id="Qac-4V-yZD"/>
-                            <constraint firstItem="Hqc-hy-Lg4" firstAttribute="leading" secondItem="eWu-qE-XHM" secondAttribute="leadingMargin" constant="-20" id="dRU-wp-G5e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YzN-nx-1VJ" secondAttribute="trailing" constant="-20" id="j7c-A8-rhp"/>
-                            <constraint firstItem="IsK-tK-bOB" firstAttribute="top" secondItem="Hqc-hy-Lg4" secondAttribute="bottom" id="osK-PN-b92"/>
-                            <constraint firstItem="Hqc-hy-Lg4" firstAttribute="top" secondItem="YzN-nx-1VJ" secondAttribute="bottom" id="tVI-s1-Ysy"/>
+                            <constraint firstItem="YzN-nx-1VJ" firstAttribute="top" secondItem="eWu-qE-XHM" secondAttribute="topMargin" id="9Wl-C7-U2I"/>
+                            <constraint firstItem="YzN-nx-1VJ" firstAttribute="centerX" secondItem="eWu-qE-XHM" secondAttribute="centerX" id="Nhw-Rg-QjQ"/>
+                            <constraint firstItem="YzN-nx-1VJ" firstAttribute="leading" secondItem="eWu-qE-XHM" secondAttribute="leadingMargin" constant="-20" id="R0w-E4-NCD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YzN-nx-1VJ" secondAttribute="trailing" constant="-20" id="eVz-ZL-TWL"/>
+                            <constraint firstItem="IsK-tK-bOB" firstAttribute="top" secondItem="YzN-nx-1VJ" secondAttribute="bottom" id="uRC-vg-zOQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Grapevine" id="8aY-or-hzN"/>
@@ -479,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npn-8k-cy3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2026" y="404"/>
+            <point key="canvasLocation" x="2780" y="-322"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="YHB-AA-i9C">
@@ -621,7 +593,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bQ-Cp-Vmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gO1-1i-VP1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3845" y="404"/>
+            <point key="canvasLocation" x="4395" y="76"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="Gql-WB-Cvh">
@@ -635,6 +607,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUE-qr-9S0" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                <rect key="frame" x="20" y="72" width="560" height="50"/>
+                                <color key="backgroundColor" red="0.27450980392156865" green="0.71764705882352942" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GRx-03-pvg"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P52-3w-4NV" customClass="CVCalendarView" customModule="CVCalendar">
                                 <rect key="frame" x="20" y="122" width="560" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -693,41 +673,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUE-qr-9S0" customClass="CVCalendarMenuView" customModule="CVCalendar">
-                                <rect key="frame" x="20" y="72" width="560" height="50"/>
-                                <color key="backgroundColor" red="0.27450980392156865" green="0.71764705882352942" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="GRx-03-pvg"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="P52-3w-4NV" firstAttribute="leading" secondItem="Vpb-u8-zxG" secondAttribute="leadingMargin" id="2ey-HE-1qC"/>
                             <constraint firstItem="P52-3w-4NV" firstAttribute="centerX" secondItem="Vpb-u8-zxG" secondAttribute="centerX" id="78J-V6-gkn"/>
                             <constraint firstItem="VUE-qr-9S0" firstAttribute="leading" secondItem="Vpb-u8-zxG" secondAttribute="leadingMargin" id="Cc3-bd-Z1H"/>
-                            <constraint firstItem="PFg-zw-ruZ" firstAttribute="trailing" secondItem="Vpb-u8-zxG" secondAttribute="trailingMargin" constant="20" id="HKI-iR-RpY"/>
+                            <constraint firstItem="PFg-zw-ruZ" firstAttribute="leading" secondItem="Vpb-u8-zxG" secondAttribute="leadingMargin" constant="-20" id="HQP-Be-FhS"/>
                             <constraint firstItem="VUE-qr-9S0" firstAttribute="top" secondItem="TzS-Qa-fCo" secondAttribute="bottom" constant="8" id="K9Q-GV-KI7"/>
-                            <constraint firstItem="JC5-sQ-SHV" firstAttribute="top" secondItem="PFg-zw-ruZ" secondAttribute="bottom" id="UQx-fw-DNz"/>
+                            <constraint firstItem="PFg-zw-ruZ" firstAttribute="top" secondItem="P52-3w-4NV" secondAttribute="bottom" constant="8" id="U5f-zN-9kM"/>
+                            <constraint firstItem="JC5-sQ-SHV" firstAttribute="top" secondItem="PFg-zw-ruZ" secondAttribute="bottom" id="Ubv-2w-DAx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PFg-zw-ruZ" secondAttribute="trailing" constant="-20" id="X62-1x-9ch"/>
                             <constraint firstItem="VUE-qr-9S0" firstAttribute="centerX" secondItem="Vpb-u8-zxG" secondAttribute="centerX" id="acz-B4-tX2"/>
-                            <constraint firstItem="PFg-zw-ruZ" firstAttribute="top" secondItem="P52-3w-4NV" secondAttribute="bottom" constant="8" id="d8q-Cg-93A"/>
                             <constraint firstItem="P52-3w-4NV" firstAttribute="trailing" secondItem="Vpb-u8-zxG" secondAttribute="trailingMargin" id="i38-Zr-e29"/>
                             <constraint firstItem="P52-3w-4NV" firstAttribute="top" secondItem="VUE-qr-9S0" secondAttribute="bottom" id="iaA-cc-aoV"/>
                             <constraint firstItem="VUE-qr-9S0" firstAttribute="trailing" secondItem="Vpb-u8-zxG" secondAttribute="trailingMargin" id="kPJ-Vb-aql"/>
-                            <constraint firstItem="PFg-zw-ruZ" firstAttribute="leading" secondItem="Vpb-u8-zxG" secondAttribute="leadingMargin" constant="-20" id="tgD-84-90Y"/>
-                            <constraint firstItem="PFg-zw-ruZ" firstAttribute="centerX" secondItem="Vpb-u8-zxG" secondAttribute="centerX" id="ziy-20-8O9"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Ygc-NN-Rq2"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="Rep-7p-QcL">
-                        <barButtonItem key="leftBarButtonItem" title="List" id="bwL-33-vNy">
-                            <connections>
-                                <segue destination="9fo-SM-X0t" kind="unwind" unwindAction="backToEventListViewController:" id="h3V-0c-mVc"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Week" id="5uE-je-JqX">
                             <connections>
                                 <action selector="changeView:" destination="aAM-Se-11v" id="SuB-wb-6Fw"/>
@@ -742,14 +706,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WV-1d-JCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="9fo-SM-X0t" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2967" y="1168"/>
+            <point key="canvasLocation" x="2780" y="404"/>
         </scene>
-        <!--Grapevine Navigation Controller-->
+        <!--Calendar-->
         <scene sceneID="vaL-Ne-hcT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OyG-pm-mSW" customClass="GrapevineNavigationController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="glyphicons-46-calendar" selectedImage="glyphicons-46-calendar" id="qwq-95-4bc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sXi-XO-rxP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -762,7 +726,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HG-ng-H16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2188" y="1168"/>
+            <point key="canvasLocation" x="2030" y="404"/>
         </scene>
         <!--Feed Management-->
         <scene sceneID="pKI-Y3-o5e">
@@ -878,21 +842,14 @@
                             <constraint firstItem="Hn4-NC-8lu" firstAttribute="top" secondItem="edN-AO-aTe" secondAttribute="topMargin" id="t0J-G3-jRv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Feed Management" id="BCD-lt-b5u">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="w3r-j0-M22">
-                            <connections>
-                                <segue destination="zgh-qS-ZN5" kind="unwind" unwindAction="backToEventListViewController:" id="3U7-Px-gX5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Feed Management" id="BCD-lt-b5u"/>
                     <connections>
                         <outlet property="tableView" destination="Hn4-NC-8lu" id="mpF-xs-mfz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XN8-jM-2L2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="zgh-qS-ZN5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1452" y="1903"/>
+            <point key="canvasLocation" x="2780" y="1155"/>
         </scene>
         <!--Grapevine Navigation Controller-->
         <scene sceneID="0mP-Ea-cJk">
@@ -910,12 +867,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3i-QH-2ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2975" y="404"/>
+            <point key="canvasLocation" x="3613" y="76"/>
         </scene>
-        <!--Grapevine Navigation Controller-->
+        <!--My Events-->
         <scene sceneID="xFG-xU-ERF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p6z-Ss-da5" customClass="GrapevineNavigationController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Events" image="glyphicons-275-beer" id="0ib-he-v3w"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7ru-5A-gSY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -928,12 +886,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jai-Id-it5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="404"/>
+            <point key="canvasLocation" x="2030" y="-322"/>
         </scene>
-        <!--Grapevine Navigation Controller-->
+        <!--My Feeds-->
         <scene sceneID="rbD-0u-lcg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pn3-Bv-ySk" customClass="GrapevineNavigationController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Feeds" image="glyphicons-115-list" id="uW7-GQ-Ptg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZeG-du-QbX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -946,10 +905,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cM-PD-M5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1452" y="1168"/>
+            <point key="canvasLocation" x="2030" y="1155"/>
+        </scene>
+        <!--Grapevine Tab View Controller-->
+        <scene sceneID="wWe-tX-NjK">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ovg-wy-SHM" customClass="GrapevineTabViewController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="60y-sD-Hpv">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.80645814299999996" green="0.6618920519" blue="0.80996221400000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="p6z-Ss-da5" kind="relationship" relationship="viewControllers" id="JDk-9T-Q97"/>
+                        <segue destination="OyG-pm-mSW" kind="relationship" relationship="viewControllers" id="gHM-r1-Q4Y"/>
+                        <segue destination="Pn3-Bv-ySk" kind="relationship" relationship="viewControllers" id="mke-Is-2IJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehx-k9-o41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="404"/>
         </scene>
     </scenes>
     <resources>
+        <image name="glyphicons-115-list" width="24" height="21"/>
+        <image name="glyphicons-275-beer" width="23" height="24"/>
         <image name="glyphicons-46-calendar" width="23" height="24"/>
         <image name="grapevine-logo-full-words-outline2swag" width="1174" height="304"/>
         <image name="grapevineNew" width="521" height="522"/>
@@ -957,7 +938,7 @@
         <image name="swag-grape" width="157" height="290"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YbQ-fN-3ob"/>
-        <segue reference="m2J-bx-KXE"/>
+        <segue reference="mco-2s-tLG"/>
+        <segue reference="QrZ-Yx-yTX"/>
     </inferredMetricsTieBreakers>
 </document>

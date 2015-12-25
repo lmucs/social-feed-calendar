@@ -264,7 +264,7 @@ class CreateAccountViewController: UIViewController {
             let nav = segue.destinationViewController as! GrapevineNavigationController
             let eventsView = nav.topViewController as! EventListViewController
             eventsView.userToken = self.userToken
-            eventsView.getAllUserEvents()
+            //eventsView.getAllUserEvents()
         }
         
     }

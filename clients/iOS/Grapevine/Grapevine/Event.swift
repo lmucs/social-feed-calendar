@@ -14,12 +14,12 @@ class Event: NSObject, Mappable {
     var title: String!
     var dateNS: NSDate!
     var date: CVDate!
-    var status: String!
+    var status: String?
     var eventId: Int!
     var feedId: Int!
     var timeProcessed: NSDate!
     var startTime: EventTime!
-    var endTime: EventTime!
+    var endTime: EventTime?
     var hasEndTime: Bool = false
     var isAllDay: Bool = false
     var isMultiDay: Bool = false
@@ -55,9 +55,9 @@ class Event: NSObject, Mappable {
         if (dict["end_time"] != nil) {
             if let end = dict["end_time"] as? String {
                 self.endTime = EventTime()
-                self.endTime.setAll(NSDate(timeIntervalSince1970: NSTimeInterval(String(Int(end)!/1000))!))
+                self.endTime!.setAll(NSDate(timeIntervalSince1970: NSTimeInterval(String(Int(end)!/1000))!))
                 self.hasEndTime = true
-                if !sameDate(self.endTime.dateCV, date2: self.startTime.dateCV){
+                if !sameDate(self.endTime!.dateCV, date2: self.startTime.dateCV){
                     self.isMultiDay = true
                 }
             }

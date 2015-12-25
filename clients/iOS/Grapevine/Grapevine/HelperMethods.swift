@@ -14,6 +14,9 @@ let apiBaseUrl = "https://grapevine.herokuapp.com"
 let grapevineButtonColor = UIColor(red:0.54, green:0.07, blue:0.53, alpha:1.0)
 let grapevineButtonCornerRadius: CGFloat = 10
 
+let grapevineBarColor = UIColor(red:0.81, green:0.66, blue:0.81, alpha:1.0)
+let grapevineIndicatorColor = UIColor(red:0.27, green:0.72, blue:0.45, alpha:1.0)
+
 let textLogo = UIImage(named: "grapevine-logo-full-words-outline2swag.png")
 let textLogoSmall = UIImage(named: "grapevine-logo-full-words-outline2swag40h")
 
@@ -125,6 +128,36 @@ func sameDate(date1: CVDate, date2: CVDate) -> Bool {
     return false
 }
 
+func date1LessThanDate2(date1: CVDate, date2: CVDate) -> Bool {
+    if (date1.year < date2.year){
+        return true
+    }
+    if (date1.year == date2.year){
+        if (date1.month < date2.month){
+            return true
+        }
+        if (date1.month == date2.month){
+            if (date1.day < date2.day) {
+                return true
+            }
+        }
+    }
+    return false
+}
+
+func isInDateRange(startDate: CVDate, endDate: CVDate, testDate: CVDate) -> Bool {
+    if sameDate(startDate, date2: testDate){
+        return true
+    }
+    if sameDate(endDate, date2: testDate){
+        return true
+    }
+    if date1LessThanDate2(startDate, date2: testDate) && date1LessThanDate2(testDate, date2: endDate) {
+        return true
+    }
+    return false
+}
+
 // Yeah i know this is messy as hell will fix later
 func buildTimeString(time: EventTime, militaryTime: Bool) -> String {
     if !militaryTime {
@@ -149,7 +182,7 @@ func buildEventTimeRange(myEvent: Event) -> String {
         if myEvent.isMultiDay {
             return buildMultiDayRange(myEvent)
         }
-        let end = buildTimeString(myEvent.endTime, militaryTime: false)
+        let end = buildTimeString(myEvent.endTime!, militaryTime: false)
         return start + "-" + end
     }
     if myEvent.isAllDay{
@@ -175,7 +208,7 @@ func buildEventShortDateString(date: CVDate) -> String {
 
 func buildMultiDayRange(event: Event) -> String {
     let startDateStr = String(buildEventShortDateString(event.startTime.dateCV))
-    let endDateStr = String(buildEventShortDateString(event.endTime.dateCV))
+    let endDateStr = String(buildEventShortDateString(event.endTime!.dateCV))
     let timeStr = startDateStr + " - " + endDateStr
     return timeStr
 }

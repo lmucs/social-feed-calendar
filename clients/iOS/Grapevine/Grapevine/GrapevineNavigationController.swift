@@ -12,7 +12,7 @@ class GrapevineNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.barTintColor = UIColor(red:0.81, green:0.66, blue:0.81, alpha:1.0)
+        self.navigationBar.barTintColor = grapevineBarColor
         // Do any additional setup after loading the view.
     }
 
