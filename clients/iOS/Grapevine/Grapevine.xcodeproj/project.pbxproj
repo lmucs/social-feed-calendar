@@ -14,21 +14,22 @@
 		F121A15A1B9F56E2008E3F7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F121A1591B9F56E2008E3F7A /* Images.xcassets */; };
 		F121A15D1B9F56E2008E3F7A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F121A15B1B9F56E2008E3F7A /* LaunchScreen.xib */; };
 		F121A1691B9F56E2008E3F7A /* GrapevineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F121A1681B9F56E2008E3F7A /* GrapevineTests.swift */; };
-		F125667C1BC4B49700EDFA36 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125667B1BC4B49700EDFA36 /* Token.swift */; settings = {ASSET_TAGS = (); }; };
-		F12C191D1C2232CB002EF78C /* GrapevineTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C191C1C2232CB002EF78C /* GrapevineTabViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		F12C19211C28D478002EF78C /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12C19201C28D478002EF78C /* RefreshView.xib */; settings = {ASSET_TAGS = (); }; };
-		F12ECDA81C1AC1E4007D8619 /* NoEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12ECDA71C1AC1E4007D8619 /* NoEventsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		F12ECDAC1C1CCAB2007D8619 /* GrapevineNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12ECDAB1C1CCAB2007D8619 /* GrapevineNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
-		F14B2A361BD2DD9B00C1E17E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		F16C8BC91C04D7A500EE66EC /* FeedManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C8BC81C04D7A500EE66EC /* FeedManagementViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		F17935681BBAFD3B001F8791 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17935671BBAFD3B001F8791 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
-		F17D009F1C093181002632AD /* EventTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17D009E1C093181002632AD /* EventTime.swift */; settings = {ASSET_TAGS = (); }; };
-		F1A37D1D1BBDBEE70094541C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A37D1C1BBDBEE60094541C /* User.swift */; settings = {ASSET_TAGS = (); }; };
-		F1A3F64A1BD9A6E700988291 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3F6491BD9A6E700988291 /* HelperMethods.swift */; settings = {ASSET_TAGS = (); }; };
-		F1C5FBED1BFBA54D002DBBA4 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5FBEC1BFBA54D002DBBA4 /* EventDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		F1EBFECE1C16412100F4AF0E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EBFECD1C16412100F4AF0E /* Feed.swift */; settings = {ASSET_TAGS = (); }; };
-		F1EBFED01C1642C800F4AF0E /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EBFECF1C1642C800F4AF0E /* FeedTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		F1EBFED21C18BA9A00F4AF0E /* UIUnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EBFED11C18BA9A00F4AF0E /* UIUnderlinedLabel.swift */; settings = {ASSET_TAGS = (); }; };
+		F125667C1BC4B49700EDFA36 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125667B1BC4B49700EDFA36 /* Token.swift */; };
+		F12C191D1C2232CB002EF78C /* GrapevineTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C191C1C2232CB002EF78C /* GrapevineTabViewController.swift */; };
+		F12C19211C28D478002EF78C /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12C19201C28D478002EF78C /* RefreshView.xib */; };
+		F12C19231C292604002EF78C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C19221C292604002EF78C /* SettingsViewController.swift */; };
+		F12ECDA81C1AC1E4007D8619 /* NoEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12ECDA71C1AC1E4007D8619 /* NoEventsTableViewCell.swift */; };
+		F12ECDAC1C1CCAB2007D8619 /* GrapevineNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12ECDAB1C1CCAB2007D8619 /* GrapevineNavigationController.swift */; };
+		F14B2A361BD2DD9B00C1E17E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */; };
+		F16C8BC91C04D7A500EE66EC /* FeedManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C8BC81C04D7A500EE66EC /* FeedManagementViewController.swift */; };
+		F17935681BBAFD3B001F8791 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17935671BBAFD3B001F8791 /* Event.swift */; };
+		F17D009F1C093181002632AD /* EventTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17D009E1C093181002632AD /* EventTime.swift */; };
+		F1A37D1D1BBDBEE70094541C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A37D1C1BBDBEE60094541C /* User.swift */; };
+		F1A3F64A1BD9A6E700988291 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3F6491BD9A6E700988291 /* HelperMethods.swift */; };
+		F1C5FBED1BFBA54D002DBBA4 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5FBEC1BFBA54D002DBBA4 /* EventDetailViewController.swift */; };
+		F1EBFECE1C16412100F4AF0E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EBFECD1C16412100F4AF0E /* Feed.swift */; };
+		F1EBFED01C1642C800F4AF0E /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EBFECF1C1642C800F4AF0E /* FeedTableViewCell.swift */; };
+		F1EBFED21C18BA9A00F4AF0E /* UIUnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EBFED11C18BA9A00F4AF0E /* UIUnderlinedLabel.swift */; };
 		F1ECD65B1BA88895001FFD58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD65A1BA88895001FFD58 /* LoginViewController.swift */; };
 		F1ECD65D1BA894CB001FFD58 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD65C1BA894CB001FFD58 /* CreateAccountViewController.swift */; };
 		F1ECD65F1BA89FE6001FFD58 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECD65E1BA89FE6001FFD58 /* EventListViewController.swift */; };
@@ -62,6 +63,7 @@
 		F125667B1BC4B49700EDFA36 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F12C191C1C2232CB002EF78C /* GrapevineTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrapevineTabViewController.swift; sourceTree = "<group>"; };
 		F12C19201C28D478002EF78C /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
+		F12C19221C292604002EF78C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F12ECDA71C1AC1E4007D8619 /* NoEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoEventsTableViewCell.swift; sourceTree = "<group>"; };
 		F12ECDAB1C1CCAB2007D8619 /* GrapevineNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrapevineNavigationController.swift; sourceTree = "<group>"; };
 		F14B2A351BD2DD9B00C1E17E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				F121A14F1B9F56E2008E3F7A /* AppDelegate.swift */,
 				F121A1561B9F56E2008E3F7A /* Main.storyboard */,
+				F12C19221C292604002EF78C /* SettingsViewController.swift */,
 				F12C191C1C2232CB002EF78C /* GrapevineTabViewController.swift */,
 				F12ECDA71C1AC1E4007D8619 /* NoEventsTableViewCell.swift */,
 				F16C8BC81C04D7A500EE66EC /* FeedManagementViewController.swift */,
@@ -247,6 +250,7 @@
 				TargetAttributes = {
 					F121A1491B9F56E2008E3F7A = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = G9788LQTK5;
 					};
 					F121A1611B9F56E2008E3F7A = {
 						CreatedOnToolsVersion = 6.4;
@@ -349,6 +353,7 @@
 			files = (
 				F125667C1BC4B49700EDFA36 /* Token.swift in Sources */,
 				F12ECDA81C1AC1E4007D8619 /* NoEventsTableViewCell.swift in Sources */,
+				F12C19231C292604002EF78C /* SettingsViewController.swift in Sources */,
 				F1EBFECE1C16412100F4AF0E /* Feed.swift in Sources */,
 				F12ECDAC1C1CCAB2007D8619 /* GrapevineNavigationController.swift in Sources */,
 				F12C191D1C2232CB002EF78C /* GrapevineTabViewController.swift in Sources */,
@@ -497,10 +502,14 @@
 			baseConfigurationReference = 37F1BD56148D368AD49D07F8 /* Pods-Grapevine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Grapevine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Grapevine.Grapevine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -509,10 +518,14 @@
 			baseConfigurationReference = AF9E8D6E589A3AFFCA6EDC69 /* Pods-Grapevine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Grapevine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Grapevine.Grapevine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
