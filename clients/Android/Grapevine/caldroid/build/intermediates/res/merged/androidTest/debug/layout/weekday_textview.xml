@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    style="?styleCaldroidWeekdayView"/><!-- From: file:/home/jeff/Development/grapevine/clients/Android/Grapevine/caldroid/src/main/res/layout/weekday_textview.xml --><!-- From: file:/home/jeff/Development/grapevine/clients/Android/Grapevine/caldroid/build/intermediates/bundles/debug/res/layout/weekday_textview.xml -->
