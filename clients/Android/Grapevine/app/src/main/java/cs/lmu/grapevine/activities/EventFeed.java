@@ -28,13 +28,24 @@ public class EventFeed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_feed);
-        setLoadingMessage();
-        ListView eventFeed = (ListView)findViewById(R.id.event_feed);
-        eventFeed.setOnItemClickListener(new EventListClickListener(this));
-        setLogoOnActionBar();
+    }
 
-        EventFeedRequest getUserEvents = new EventFeedRequest(this);
-        Login.httpRequestQueue.add(getUserEvents);
+    protected void onStart() {
+        super.onStart();
+        if (!UserProfile.isLoggedIn(this)) {
+            Intent goBackToLoginScreen = new Intent(this, Login.class);
+            startActivity(goBackToLoginScreen);
+            finish();
+        } else {
+            setLoadingMessage();
+            ListView eventFeed = (ListView)findViewById(R.id.event_feed);
+            eventFeed.setOnItemClickListener(new EventListClickListener(this));
+            setLogoOnActionBar();
+
+            EventFeedRequest getUserEvents = new EventFeedRequest(this);
+            Login.httpRequestQueue.add(getUserEvents);
+        }
+
     }
 
     @Override

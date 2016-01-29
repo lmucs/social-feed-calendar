@@ -129,7 +129,16 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setupActionBar();
+    }
+
+    protected void onRestart(Bundle savedInstanceState) {
+        if (!UserProfile.isLoggedIn(this)) {
+            Intent goBackToLoginScreen = new Intent(this, Login.class);
+            startActivity(goBackToLoginScreen);
+            finish();
+        }
     }
 
     /**
@@ -285,8 +294,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                                    @Override
                                    public void onClick(DialogInterface dialog, int which) {
                                     UserProfile.logout(getActivity());
-                                       Intent loginScreen = new Intent(getActivity().getApplicationContext(), Login.class);
-                                       startActivity(loginScreen);
+                                       Intent goBackTologinScreen = new Intent(getActivity(), EventFeed.class);
+                                       goBackTologinScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                       startActivity(goBackTologinScreen);
                                    }
                                }).setNegativeButton(R.string.logout_negative, new DialogInterface.OnClickListener() {
                                     @Override
@@ -311,6 +321,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             }
             return super.onOptionsItemSelected(item);
         }
+
     }
 
 }
