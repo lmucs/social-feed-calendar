@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.roomorama.caldroid.CaldroidFragment;
 import java.util.Calendar;
-import java.util.Date;
 import cs.lmu.grapevine.R;
 import cs.lmu.grapevine.adapters.CalendarAdapter;
 import cs.lmu.grapevine.entities.Event;

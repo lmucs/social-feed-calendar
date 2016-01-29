@@ -5,3 +5,4 @@ node_modules/
 clients/Android/Grapevine/volley/build/
 *.log
 npm-debug.log
+.idea/

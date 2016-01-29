@@ -1,15 +1,11 @@
 package cs.lmu.grapevine.activities;
 
-
-
 import android.content.Intent;
-import android.support.v4.view.MenuItemCompat;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -17,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.util.ArrayList;
 import cs.lmu.grapevine.R;
+import cs.lmu.grapevine.UserProfile;
 import cs.lmu.grapevine.entities.Event;
 import cs.lmu.grapevine.listeners.EventListClickListener;
 import cs.lmu.grapevine.requests.EventFeedRequest;
@@ -64,6 +61,8 @@ public class EventFeed extends AppCompatActivity {
             launchAddGroup();
         } else if (id == R.id.action_refresh_feed) {
             refreshFeed();
+        } else if (id == R.id.action_settings) {
+            openSettings();
         }
 
         return super.onOptionsItemSelected(item);
@@ -87,17 +86,22 @@ public class EventFeed extends AppCompatActivity {
     private void setLoadingMessage() {
         TextView welcomeMessage = (TextView)findViewById(R.id.welcome_message);
         welcomeMessage.setText("Loading your events now, "
-                + Login.userFirstName
+                + UserProfile.getFirstName(this)
                 + " "
-                + Login.userLastName
+                + UserProfile.getLastName(this)
                 + "!");
     }
 
     private void setLogoOnActionBar() {
         final ActionBar actionBar = getSupportActionBar();
-        LinearLayout actionBarView = (LinearLayout) getLayoutInflater().inflate(R.layout.action_bar,null,false);
+        LinearLayout actionBarView = (LinearLayout) getLayoutInflater().inflate(R.layout.action_bar , null, false);
         actionBar.setCustomView(actionBarView);
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
+    }
+
+    private void openSettings() {
+        Intent settings = new Intent(this,SettingsActivity.class);
+        startActivity(settings);
     }
 }

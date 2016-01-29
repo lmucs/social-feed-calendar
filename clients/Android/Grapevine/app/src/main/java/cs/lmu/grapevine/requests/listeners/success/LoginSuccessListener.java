@@ -6,8 +6,8 @@ import android.util.Log;
 import com.android.volley.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
+import cs.lmu.grapevine.UserProfile;
 import cs.lmu.grapevine.activities.EventFeed;
-import cs.lmu.grapevine.activities.Login;
 
 /**
  * Listener for successful login requests.
@@ -21,17 +21,25 @@ public class LoginSuccessListener implements Response.Listener<JSONObject> {
 
     @Override
     public void onResponse(JSONObject response) {
-        try{
-            Login.authenticationToken = response.getString("token");
-            Login.userId              = Integer.parseInt(response.getString("userID"));
-            Login.userFirstName       = response.getString("firstName");
-            Login.userLastName        = response.getString("lastName");
+        saveUserInfo(response);
+        launchEventFeed();
+    }
 
-            Intent feedEvents = new Intent(parentActivity.getApplicationContext(), EventFeed.class);
-            parentActivity.startActivity(feedEvents);
+    private void saveUserInfo(JSONObject response) {
+        try{
+            UserProfile.saveAuthenticationToken(response.getString("token"), parentActivity);
+            UserProfile.saveUserId(Integer.parseInt(response.getString("userID")), parentActivity);
+            UserProfile.saveFirstName(response.getString("firstName"), parentActivity);
+            UserProfile.saveLastName(response.getString("lastName"), parentActivity);
+            UserProfile.saveLoginStatus(parentActivity);
         }
         catch (JSONException e) {
-            Log.d("exception", "The JSON received did not have a key for authentication token.");
+            Log.d("exception", "There was an error parsing a field from json", e);
         }
+    }
+
+    private void launchEventFeed() {
+        Intent feedEvents = new Intent(parentActivity.getApplicationContext(), EventFeed.class);
+        parentActivity.startActivity(feedEvents);
     }
 }

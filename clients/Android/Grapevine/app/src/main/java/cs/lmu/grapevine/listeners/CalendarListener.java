@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.roomorama.caldroid.CaldroidListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import cs.lmu.grapevine.R;
 import cs.lmu.grapevine.activities.CalendarView;
 import cs.lmu.grapevine.adapters.EventFeedArrayAdapter;
