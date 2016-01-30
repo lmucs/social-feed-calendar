@@ -1,47 +1,38 @@
 package cs.lmu.grapevine.activities;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.LoaderManager;
-import android.content.CursorLoader;
 import android.content.Intent;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.ContactsContract;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import cs.lmu.grapevine.R;
+import cs.lmu.grapevine.UserProfile;
 import cs.lmu.grapevine.requests.LoginRequest;
 
 public class Login extends Activity {
 
-    public static String               authenticationToken;
-    public static int                  userId;
     public static AutoCompleteTextView mEmailView;
     private       EditText             mPasswordView;
     public static RequestQueue         httpRequestQueue;
     public static long                 lastRefresh;
-    public static String               userFirstName;
-    public static String               userLastName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if (UserProfile.isLoggedIn(this)) {
+            launchEventFeed();
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -67,7 +58,6 @@ public class Login extends Activity {
         });
 
         httpRequestQueue = Volley.newRequestQueue(this);
-        authenticationToken = null;
         lastRefresh = new Date().getTime();
     }
 
@@ -149,5 +139,10 @@ public class Login extends Activity {
     private void clearErrorMessage() {
         TextView loginStatus = (TextView)findViewById(R.id.login_status);
         loginStatus.setText("");
+    }
+
+    private void launchEventFeed() {
+        Intent eventFeed = new Intent(this, EventFeed.class);
+        startActivity(eventFeed);
     }
 }

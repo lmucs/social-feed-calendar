@@ -2,12 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="@dimen/social_media_icon_size"
-        android:layout_height="@dimen/social_media_icon_size"
-        android:layout_gravity="left"
-        android:id="@+id/brand_icon"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
     <TextView
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -16,4 +10,9 @@
         android:text="Feed Name"
         android:textSize="@dimen/feed_list_name_size"
         android:id="@+id/feed_title"/>
+    <ImageView
+        android:layout_width="@dimen/social_media_icon_size"
+        android:layout_height="@dimen/social_media_icon_size"
+        android:layout_gravity="left"
+        android:id="@+id/brand_icon"/>
 </LinearLayout>

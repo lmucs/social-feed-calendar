@@ -6,4 +6,5 @@
     <item android:id="@+id/action_add_group" android:title="@string/title_activity_manage_feeds" android:icon="@drawable/add"
         android:orderInCategory="100" app:showAsAction="always"/>
     <item android:id="@+id/action_refresh_feed" android:title="@string/refresh" android:orderInCategory="150" app:showAsAction="always" android:icon="@drawable/refresh"/>
+    <item android:id="@+id/action_settings" android:title="@string/settings" android:orderInCategory="150" app:showAsAction="never" />
 </menu>
