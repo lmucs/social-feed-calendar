@@ -1,9 +1,12 @@
 package cs.lmu.grapevine.requests.listeners.success;
 
 import android.app.Activity;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Response;
 import java.util.ArrayList;
+
+import cs.lmu.grapevine.R;
 import cs.lmu.grapevine.activities.ManageFeeds;
 import cs.lmu.grapevine.entities.SocialMediaFeed;
 
@@ -45,5 +48,10 @@ public class UnfollowFeedSuccessListener implements Response.Listener {
         ManageFeeds.feedsFollowed.clear();
         ManageFeeds.feedsFollowed.addAll(feedsStillFollowed);
         ManageFeeds.feedsAdapter.notifyDataSetChanged();
+
+        if (ManageFeeds.feedsAdapter.getCount() == 0) {
+            TextView noFeedsMessage =  ((TextView) parentActivity.findViewById(R.id.no_feeds_message));
+            noFeedsMessage.setText(R.string.no_feeds_message);
+        }
     }
 }

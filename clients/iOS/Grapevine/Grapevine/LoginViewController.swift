@@ -37,9 +37,6 @@ class LoginViewController: UIViewController {
         self.activityIndicator.hidden = true
         self.loginFailedLabel.hidden = true
         setupGrapevineButton(self.loginButton)
-        setVisualStrings()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,18 +44,8 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setVisualStrings(){
-        self.usernameTextField.placeholder = NSLocalizedString("Username", comment: "")
-        self.passwordTextField.placeholder = NSLocalizedString("Password", comment: "")
-        self.loginButton.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
-        self.createAccountButton.setTitle(NSLocalizedString("Create Account", comment: ""), forState: .Normal)
-    }
     
-    func dismissKeyboard(){
-        view.endEditing(true)
-    }
-    
-    
+    //link back from CreateAccountVC
     @IBAction func backToLoginViewController(segue:UIStoryboardSegue) {
         
     }

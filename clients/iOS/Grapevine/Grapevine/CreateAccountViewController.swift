@@ -39,31 +39,13 @@ class CreateAccountViewController: UIViewController {
         self.activityIndicator.hidden = true
         setupGrapevineButton(self.createAccountButton)
         disableGrapevineButton(self.createAccountButton)
-        setVisualStrings()
         loadGoodToCreate()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
-        
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func dismissKeyboard(){
-        view.endEditing(true)
-    }
-    
-    func setVisualStrings(){
-        self.firstNameTextField.placeholder = NSLocalizedString("First Name", comment: "")
-        self.lastNameTextField.placeholder = NSLocalizedString("Last Name", comment: "")
-        self.usernameTextField.placeholder = NSLocalizedString("Username", comment: "")
-        self.passwordTextField.placeholder = NSLocalizedString("Password", comment: "")
-        self.repeatPasswordTextField.placeholder = NSLocalizedString("Repeat Password", comment: "")
-        self.emailAddressTextField.placeholder = NSLocalizedString("Email Address", comment: "")
-        
-        self.createAccountButton.setTitle(NSLocalizedString("Create Account", comment: ""), forState: .Normal)
     }
     
     func loadGoodToCreate(){
@@ -223,7 +205,7 @@ class CreateAccountViewController: UIViewController {
             self.activityIndicator.stopAnimating()
             self.activityIndicator.hidden = true
             self.feedbackLabel.hidden = false
-            self.feedbackLabel.text = NSLocalizedString("Error Creating Account", comment: "")
+            //self.feedbackLabel.text = "Create Account Failed"
         }
         
         sender.enabled = false

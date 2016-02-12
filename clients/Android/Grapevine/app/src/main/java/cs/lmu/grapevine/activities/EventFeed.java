@@ -1,16 +1,19 @@
 package cs.lmu.grapevine.activities;
 
 import android.content.Intent;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import java.util.ArrayList;
 import cs.lmu.grapevine.R;
+import cs.lmu.grapevine.UserProfile;
 import cs.lmu.grapevine.entities.Event;
 import cs.lmu.grapevine.listeners.EventListClickListener;
 import cs.lmu.grapevine.requests.EventFeedRequest;
@@ -25,11 +28,24 @@ public class EventFeed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_feed);
-        ListView eventFeed = (ListView)findViewById(R.id.event_feed);
-        eventFeed.setOnItemClickListener(new EventListClickListener(this));
+    }
 
-        EventFeedRequest getUserEvents = new EventFeedRequest(this);
-        Login.httpRequestQueue.add(getUserEvents);
+    protected void onStart() {
+        super.onStart();
+        if (!UserProfile.isLoggedIn(this)) {
+            Intent goBackToLoginScreen = new Intent(this, Login.class);
+            startActivity(goBackToLoginScreen);
+            finish();
+        } else {
+            setLoadingMessage();
+            ListView eventFeed = (ListView)findViewById(R.id.event_feed);
+            eventFeed.setOnItemClickListener(new EventListClickListener(this));
+            setLogoOnActionBar();
+
+            EventFeedRequest getUserEvents = new EventFeedRequest(this);
+            Login.httpRequestQueue.add(getUserEvents);
+        }
+
     }
 
     @Override
@@ -39,8 +55,7 @@ public class EventFeed extends AppCompatActivity {
 
         miActionProgressItem = menu.findItem(R.id.miActionProgress);
         // Extract the action-view from the menu item
-        ProgressBar v =  (ProgressBar) MenuItemCompat.getActionView(miActionProgressItem);
-        showRequestProgressSpinner();
+        ProgressBar v =  (ProgressBar) findViewById(R.id.miActionProgress);
         return true;
     }
 
@@ -57,6 +72,8 @@ public class EventFeed extends AppCompatActivity {
             launchAddGroup();
         } else if (id == R.id.action_refresh_feed) {
             refreshFeed();
+        } else if (id == R.id.action_settings) {
+            openSettings();
         }
 
         return super.onOptionsItemSelected(item);
@@ -73,16 +90,29 @@ public class EventFeed extends AppCompatActivity {
     }
 
     public void refreshFeed() {
-        showRequestProgressSpinner();
         RefreshEventFeedRequest getNewEvents = new RefreshEventFeedRequest(this);
         Login.httpRequestQueue.add(getNewEvents);
     }
 
-    private void showRequestProgressSpinner() {
-        miActionProgressItem.setVisible(true);
+    private void setLoadingMessage() {
+        TextView welcomeMessage = (TextView)findViewById(R.id.welcome_message);
+        welcomeMessage.setText("Loading your events now, "
+                + UserProfile.getFirstName(this)
+                + " "
+                + UserProfile.getLastName(this)
+                + "!");
     }
 
-    public static void hideRequestProgressSpinner() {
-        miActionProgressItem.setVisible(false);
+    private void setLogoOnActionBar() {
+        final ActionBar actionBar = getSupportActionBar();
+        LinearLayout actionBarView = (LinearLayout) getLayoutInflater().inflate(R.layout.action_bar , null, false);
+        actionBar.setCustomView(actionBarView);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(false);
+    }
+
+    private void openSettings() {
+        Intent settings = new Intent(this,SettingsActivity.class);
+        startActivity(settings);
     }
 }

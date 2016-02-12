@@ -2,6 +2,7 @@ package cs.lmu.grapevine.activities;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,14 +12,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.roomorama.caldroid.CaldroidFragment;
 import java.util.Calendar;
-import java.util.Date;
 import cs.lmu.grapevine.R;
 import cs.lmu.grapevine.adapters.CalendarAdapter;
-import cs.lmu.grapevine.adapters.EventFeedArrayAdapter;
+import cs.lmu.grapevine.entities.Event;
 import cs.lmu.grapevine.listeners.CalendarListener;
 import cs.lmu.grapevine.listeners.EventListClickListener;
 
 public class CalendarView extends AppCompatActivity {
+    public static CaldroidFragment calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +37,12 @@ public class CalendarView extends AppCompatActivity {
         t.add(R.id.calendar_fragment_container, caldroidFragment);
         t.commit();
         CalendarListener calendarListener = new CalendarListener(this);
+        calendar = caldroidFragment;
         caldroidFragment.setCaldroidListener(calendarListener);
 
         populateCalenderWithEvents(caldroidFragment);
         insertCalendarFeed();
+        clearTitle();
 
     }
 
@@ -70,9 +73,10 @@ public class CalendarView extends AppCompatActivity {
     }
 
     private void populateCalenderWithEvents(CaldroidFragment calendar) {
-        for (int i = 0; i < EventFeed.usersEvents.size(); i++) {
-            Date eventDate = new Date(EventFeed.usersEvents.get(i).getStartTimeTimestamp());
-            calendar.setBackgroundResourceForDate(R.color.event_highlight, eventDate);
+        for (Event event : EventFeed.usersEvents) {
+
+            calendar.setBackgroundResourceForDate(R.color.event_highlight, event.getStartDate());
+            calendar.setBackgroundResourceForDate(R.color.event_highlight, event.getEndDate());
         }
 
         calendar.refreshView();
@@ -105,6 +109,11 @@ public class CalendarView extends AppCompatActivity {
     private void removeEmptyMessageContainer() {
         TextView emptyMessageContainer = (TextView)findViewById(R.id.empty_message);
         ((LinearLayout)emptyMessageContainer.getParent()).removeView(emptyMessageContainer);
+    }
+
+    private void clearTitle() {
+        final ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
     }
 
 }

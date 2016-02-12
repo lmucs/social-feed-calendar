@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Locale;
 import cs.lmu.grapevine.entities.Event;
 import cs.lmu.grapevine.R;
@@ -38,7 +39,7 @@ public class EventFeedArrayAdapter extends ArrayAdapter<Event> implements Filter
     public EventFeedArrayAdapter(Context context, ArrayList<Event> events) {
         super(context, 0, events);
         this.originalEvents = new ArrayList<>(events);
-        filteredItems = new ArrayList<>(events);
+        filteredItems = events;
     }
 
     @Override
@@ -120,31 +121,37 @@ public class EventFeedArrayAdapter extends ArrayAdapter<Event> implements Filter
         String todayMonth = dateMonth.format(today);
         String todayDay   = dateDay.format(today);
 
-
-        if (!(event.endTimeIsKnown())) {
-            String eventTime = timeOfEvent.format(event.getStartDate());
+        String eventTime;
+        if (event.startsLaterToday()) {
+            if (event.endTimeIsKnown()) {
+                eventTime = "today from "
+                                + timeOfEvent.format(event.getStartDate())
+                                + " - "
+                                + timeOfEvent.format(event.getEndDate());
+            } else {
+                eventTime = "today at " + timeOfEvent.format(event.getStartDate());
+            }
+            setCalendarPageAndEventTime(todayMonth, todayDay, eventTime);
+        } else if(!(event.endTimeIsKnown())) {
+            eventTime = timeOfEvent.format(event.getStartDate());
             setCalendarPageAndEventTime(startMonth, startDay, eventTime);
         } else if (event.startsAndEndsSameDay()) {
-            String eventTime = timeOfEvent.format(event.getStartDate())
+            eventTime = timeOfEvent.format(event.getStartDate())
                     + " - "
                     + timeOfEvent.format(event.getEndDate());
             setCalendarPageAndEventTime(startMonth, startDay, eventTime);
-        } else if (event.startsLaterToday()) {
-            String eventTime  = "today at " + timeOfEvent.format(event.getStartDate());
-            setCalendarPageAndEventTime(todayMonth, todayDay, eventTime);
         } else if (event.endsLaterToday()) {
-            String eventTime = "ends today at " + timeOfEvent.format(event.getEndDate());
+            eventTime = "ends today at " + timeOfEvent.format(event.getEndDate());
             setCalendarPageAndEventTime(endMonth, endDay, eventTime);
         } else if(event.getStartDate().after(today)) {
-            String eventTime = timeOfEvent.format(event.getStartDate());
+            eventTime = timeOfEvent.format(event.getStartDate());
             setCalendarPageAndEventTime(startMonth, startDay, eventTime);
         } else {
-            String eventTime = "ends on "
-                    + fullDate.format(event.getEndDate());
-
+            eventTime = "ends on " + fullDate.format(event.getEndDate());
             setCalendarPageAndEventTime(todayMonth, todayDay, eventTime);
         }
     }
+
     protected void setCalendarPageAndEventTime(String eventMonth, String eventDay, String eventTime) {
 
         if (!(this.eventMonth == null)) {
@@ -188,5 +195,12 @@ public class EventFeedArrayAdapter extends ArrayAdapter<Event> implements Filter
         } else {
             eventTitle.setText(event.getTitle());
         }
+    }
+
+    @Override
+    public void notifyDataSetChanged() {
+        Collections.sort(filteredItems);
+
+        super.notifyDataSetChanged();
     }
 }

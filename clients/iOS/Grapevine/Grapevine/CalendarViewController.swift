@@ -39,7 +39,7 @@ class CalendarViewController: UIViewController, CVCalendarViewDelegate, CVCalend
         else {
             // we should not get here
         }
-        self.title = NSLocalizedString("Calendar", comment: "")
+        self.title = "Calendar"
         self.navigationItem.title = (monthIntToMonthString(self.calendarView.presentedDate) + " " + String(self.calendarView.presentedDate.year))
         
         

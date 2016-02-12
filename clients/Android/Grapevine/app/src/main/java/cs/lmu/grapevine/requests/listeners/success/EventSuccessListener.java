@@ -1,6 +1,8 @@
 package cs.lmu.grapevine.requests.listeners.success;
 
 import android.app.Activity;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.android.volley.Response;
@@ -10,8 +12,10 @@ import com.google.gson.reflect.TypeToken;
 import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import cs.lmu.grapevine.activities.EventFeed;
+import cs.lmu.grapevine.activities.Login;
 import cs.lmu.grapevine.entities.Event;
 import cs.lmu.grapevine.adapters.EventFeedArrayAdapter;
 import cs.lmu.grapevine.R;
@@ -33,6 +37,8 @@ public class EventSuccessListener implements Response.Listener<JSONArray> {
         EventFeed.usersEvents = usersEvents;
         Collections.sort(EventFeed.usersEvents);
         InflateEventFeed(usersEvents);
+        Login.lastRefresh = new Date().getTime();
+        clearLoadingMessage();
     }
 
     public static ArrayList<Event> deserializeJson(JSONArray userEventsJSON) {
@@ -51,11 +57,17 @@ public class EventSuccessListener implements Response.Listener<JSONArray> {
         ListView eventFeed = (ListView) parentActivity.findViewById(R.id.event_feed);
         eventFeed.setAdapter(eventAdapter);
         EventFeed.usersEventsAdapter = eventAdapter;
-        EventFeed.hideRequestProgressSpinner();
     }
 
     private void printEmptyListMessage() {
         TextView emptyMessageContainer = (TextView) parentActivity.findViewById(R.id.empty_message);
-        emptyMessageContainer.setText(R.string.event_list_empty);
+        emptyMessageContainer.setVisibility(View.VISIBLE);
+    }
+
+    private void clearLoadingMessage() {
+        LinearLayout welcomeMessage = (LinearLayout)parentActivity.findViewById(R.id.loading);
+        welcomeMessage.setVisibility(View.GONE);
+        parentActivity.findViewById(R.id.upcoming).setVisibility(View.VISIBLE);
+        parentActivity.findViewById(R.id.miActionProgress).setVisibility(View.GONE);
     }
 }

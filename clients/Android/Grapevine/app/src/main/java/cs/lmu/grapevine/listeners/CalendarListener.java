@@ -2,6 +2,7 @@ package cs.lmu.grapevine.listeners;
 
 import android.app.Activity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -9,6 +10,7 @@ import com.roomorama.caldroid.CaldroidListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import cs.lmu.grapevine.R;
+import cs.lmu.grapevine.activities.CalendarView;
 import cs.lmu.grapevine.adapters.EventFeedArrayAdapter;
 
 /**
@@ -40,8 +42,23 @@ public class CalendarListener extends CaldroidListener {
         EventFeedArrayAdapter eventFeedAdapter = (EventFeedArrayAdapter)eventFeed.getAdapter();
         SimpleDateFormat dateStringFormat = new SimpleDateFormat("M/d/yyyy");
         String eventDay = dateStringFormat.format(date);
-        Filter eventFilter = eventFeedAdapter.getFilter();
-        eventFilter.filter(eventDay);
+
+        if (eventFeedAdapter != null) {
+            Filter eventFilter = eventFeedAdapter.getFilter();
+            eventFilter.filter(eventDay);
+        }
+
+    }
+
+    @Override
+    public void onCaldroidViewCreated() {
+        Button leftButton  = CalendarView.calendar.getLeftArrowButton();
+        Button rightButton = CalendarView.calendar.getRightArrowButton();
+        TextView textView  = CalendarView.calendar.getMonthTitleTextView();
+
+        // Do customization here
+        leftButton.setBackgroundResource(R.drawable.calendar_left_button);
+        rightButton.setBackgroundResource(R.drawable.calendar_right_button);
     }
 
 }

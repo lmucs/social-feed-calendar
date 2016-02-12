@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4C9-R4-X1O">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4C9-R4-X1O">
                                 <rect key="frame" x="179" y="318" width="242" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="242" id="SZU-7V-5j8"/>
@@ -26,7 +26,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSt-EZ-b3c">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSt-EZ-b3c">
                                 <rect key="frame" x="179" y="356" width="242" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="242" id="zCr-Vh-uJQ"/>
@@ -838,59 +838,6 @@
                                             <outlet property="feedNetwork" destination="y8N-V4-6ab" id="RWa-JF-nF8"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="howToAddCell" rowHeight="250" id="dk4-bU-8dQ" customClass="FeedTableViewCell" customModule="Grapevine" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="292" width="600" height="250"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dk4-bU-8dQ" id="yn2-l7-CAu">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fblink" translatesAutoresizingMaskIntoConstraints="NO" id="pCs-Fn-fOT">
-                                                    <rect key="frame" x="52" y="98" width="497" height="41"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="41" id="QUn-8u-jRM"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterlink" translatesAutoresizingMaskIntoConstraints="NO" id="7xj-F0-VA5">
-                                                    <rect key="frame" x="52" y="147" width="497" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="Frf-yZ-hEx"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If the feed you add posts or tweets about an event, we will add it to your list and calendar!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRk-z2-N0j">
-                                                    <rect key="frame" x="12" y="189" width="577" height="41"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swo-YW-h4i">
-                                                    <rect key="frame" x="12" y="8" width="577" height="82"/>
-                                                    <string key="text">You have no feeds! Add a feed by entering the end of the link to the Facebook page or Twitter account you want to follow. For example, in the links below, you would enter the highlighted text and then select either Facebook or Twitter</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="swo-YW-h4i" firstAttribute="top" secondItem="yn2-l7-CAu" secondAttribute="topMargin" id="AtX-f2-aRf"/>
-                                                <constraint firstItem="pCs-Fn-fOT" firstAttribute="centerX" secondItem="yn2-l7-CAu" secondAttribute="centerX" id="GEc-SD-LrK"/>
-                                                <constraint firstItem="pCs-Fn-fOT" firstAttribute="top" secondItem="swo-YW-h4i" secondAttribute="bottom" constant="8" id="IIn-y4-uzO"/>
-                                                <constraint firstItem="7xj-F0-VA5" firstAttribute="leading" secondItem="yn2-l7-CAu" secondAttribute="leadingMargin" constant="44" id="QTR-uN-SCY"/>
-                                                <constraint firstItem="KRk-z2-N0j" firstAttribute="top" secondItem="7xj-F0-VA5" secondAttribute="bottom" constant="8" id="Qzw-Ws-D8b"/>
-                                                <constraint firstItem="swo-YW-h4i" firstAttribute="leading" secondItem="yn2-l7-CAu" secondAttribute="leadingMargin" constant="4" id="SAT-wK-6up"/>
-                                                <constraint firstItem="pCs-Fn-fOT" firstAttribute="leading" secondItem="yn2-l7-CAu" secondAttribute="leadingMargin" constant="44" id="Vw9-bx-gLX"/>
-                                                <constraint firstItem="swo-YW-h4i" firstAttribute="centerX" secondItem="yn2-l7-CAu" secondAttribute="centerX" id="cbJ-mX-Qfc"/>
-                                                <constraint firstItem="KRk-z2-N0j" firstAttribute="leading" secondItem="yn2-l7-CAu" secondAttribute="leadingMargin" constant="4" id="eS3-c9-BYs"/>
-                                                <constraint firstItem="7xj-F0-VA5" firstAttribute="centerX" secondItem="yn2-l7-CAu" secondAttribute="centerX" id="hwK-yN-RD2"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="pCs-Fn-fOT" secondAttribute="trailing" constant="43" id="lA1-No-aYg"/>
-                                                <constraint firstItem="7xj-F0-VA5" firstAttribute="top" secondItem="pCs-Fn-fOT" secondAttribute="bottom" constant="8" id="muN-Xu-bmD"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="7xj-F0-VA5" secondAttribute="trailing" constant="43" id="wZJ-hd-Y2V"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="KRk-z2-N0j" secondAttribute="trailing" constant="3" id="xOF-RO-RSc"/>
-                                                <constraint firstItem="swo-YW-h4i" firstAttribute="trailing" secondItem="yn2-l7-CAu" secondAttribute="trailingMargin" constant="-3" id="yZM-Wd-hN7"/>
-                                                <constraint firstItem="KRk-z2-N0j" firstAttribute="centerX" secondItem="yn2-l7-CAu" secondAttribute="centerX" id="zx1-cI-FUR"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -943,19 +890,12 @@
                             <constraint firstItem="ef7-wI-dhh" firstAttribute="centerX" secondItem="pXV-CR-A6N" secondAttribute="centerX" id="j3G-4M-XNY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="ZWj-5b-fSS">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="aWu-WT-FIB">
-                            <connections>
-                                <segue destination="VEd-9o-Gpj" kind="unwind" unwindAction="backToEventListViewController:" id="eFL-o8-Awe"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="ZWj-5b-fSS"/>
                     <connections>
                         <outlet property="logoutButton" destination="ef7-wI-dhh" id="TS1-4a-U1t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqj-bZ-Hva" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="VEd-9o-Gpj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4395" y="-789"/>
         </scene>
@@ -1055,7 +995,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fblink" width="296" height="35"/>
         <image name="glyphicons-115-list" width="24" height="21"/>
         <image name="glyphicons-137-cogwheel" width="24" height="24"/>
         <image name="glyphicons-46-calendar" width="23" height="24"/>
@@ -1064,7 +1003,6 @@
         <image name="grapevineNew" width="521" height="522"/>
         <image name="purple-round-1" width="548" height="560"/>
         <image name="swag-grape" width="157" height="290"/>
-        <image name="twitterlink" width="234" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mco-2s-tLG"/>

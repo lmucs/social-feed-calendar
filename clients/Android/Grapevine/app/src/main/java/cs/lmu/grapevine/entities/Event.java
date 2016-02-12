@@ -6,6 +6,7 @@ import org.apache.commons.lang3.time.DateUtils;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Represents a database Event entity.
@@ -18,7 +19,7 @@ public class Event implements Serializable, Comparable<Event>  {
     private int eventId;
     @SerializedName("time_processed")
     private long timeProcessed;
-    private String[] location;
+    private HashMap<String,String> location;
     @SerializedName("start_time")
     private long startTimeTimestamp;
     @SerializedName("end_time")
@@ -121,11 +122,11 @@ public class Event implements Serializable, Comparable<Event>  {
         this.title = title;
     }
 
-    public String[] getLocation() {
+    public HashMap<String,String> getLocation() {
         return location;
     }
 
-    public void setLocation(String[] location) {
+    public void setLocation(HashMap<String,String> location) {
         this.location = location;
     }
 
@@ -192,6 +193,12 @@ public class Event implements Serializable, Comparable<Event>  {
         Date endDate = new Date(endTimeTimestamp);
 
         return DateUtils.isSameDay(today,endDate) && endDate.after(today);
+    }
+
+    public boolean isFinished() {
+        Date now = new Date(Calendar.getInstance().getTimeInMillis());
+        return  (endTimeTimestamp == 0 && getStartDate().before(now))
+             || (endTimeTimestamp != 0 && now.after(getEndDate()));
     }
 
     public boolean startsAndEndsSameDay() {

@@ -5,9 +5,11 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import org.json.JSONArray;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import cs.lmu.grapevine.R;
 import cs.lmu.grapevine.activities.EventFeed;
+import cs.lmu.grapevine.activities.Login;
 import cs.lmu.grapevine.entities.Event;
 
 /**
@@ -30,13 +32,22 @@ public class RefreshEventFeedSuccessListener implements Response.Listener {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(parentActivity, parentActivity.getString(R.string.refresh_success_toast), duration);
         toast.show();
-        EventFeed.hideRequestProgressSpinner();
     }
 
     private void addNewEventsToFeedFrom(JSONArray response) {
-       List<Event> newEvents = EventSuccessListener.deserializeJson(response);
-       EventFeed.usersEvents.addAll(newEvents);
-       Collections.sort(EventFeed.usersEvents);
-       EventFeed.usersEventsAdapter.notifyDataSetChanged();
+       List<Event> newEvents = EventSuccessListener.deserializeJson(response);;
+
+        for (Event event : newEvents) {
+            EventFeed.usersEventsAdapter.add(event);
+        }
+
+        for (int i = 0; i < EventFeed.usersEventsAdapter.getCount(); i++) {
+            if (((Event)EventFeed.usersEventsAdapter.getItem(i)).isFinished()) {
+                EventFeed.usersEventsAdapter.remove(EventFeed.usersEventsAdapter.getItem(i));
+            }
+        }
+
+       Login.lastRefresh = new Date().getTime();
+
     }
 }

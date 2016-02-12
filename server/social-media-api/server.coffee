@@ -24,4 +24,4 @@ app.use (req, res) ->
   res.sendStatus 404
 
 # start the server
-module.exports = app.listen process.env.PORT or 3000
+module.exports = app.listen 3000

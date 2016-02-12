@@ -1,6 +1,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context="cs.lmu.grapevine.activities.CalendarView">
-    <item android:id="@+id/action_add_group" android:title="@string/title_activity_manage_feeds" android:icon="@drawable/ic_comment_white_48dp"
-        android:orderInCategory="100" app:showAsAction="always"/>
 </menu>

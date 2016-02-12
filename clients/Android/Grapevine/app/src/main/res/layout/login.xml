@@ -31,7 +31,7 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="foo"/>
+                android:text="champ"/>
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -50,6 +50,7 @@
                 android:gravity="center">
                 <Button
                     android:id="@+id/email_sign_in_button"
+                    android:textAllCaps="false"
                     style="?android:textAppearanceSmall"
                     android:layout_weight=".6"
                     android:layout_width="@dimen/login_button_width"
@@ -69,8 +70,10 @@
                     android:layout_width="@dimen/login_button_width"
                     android:text="@string/login_create_account"
                     android:onClick="launchCreateAccountActivity"
+                    android:textAllCaps="false"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_weight=".6"/>
+                    android:layout_weight=".6"
+                    android:textColor="@color/create_account"/>
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"

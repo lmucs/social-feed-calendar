@@ -30,14 +30,7 @@ class GrapevineTabViewController: UITabBarController {
         let navFeeds = self.childViewControllers[2] as! GrapevineNavigationController
         self.feedsView = navFeeds.topViewController as! FeedManagementViewController
         self.feedsView.userToken = self.userToken!
-        
-        let tabItems = self.tabBar.items! as [UITabBarItem]
-        let tabItemEventList = tabItems[0] as UITabBarItem
-        let tabItemCalendar = tabItems[1] as UITabBarItem
-        let tabItemFeeds = tabItems[2] as UITabBarItem
-        tabItemEventList.title = NSLocalizedString("My Events", comment: "")
-        tabItemCalendar.title = NSLocalizedString("Calendar", comment: "")
-        tabItemFeeds.title = NSLocalizedString("My Feeds", comment: "")
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

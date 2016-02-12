@@ -44,9 +44,11 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
             // we should not get here
         }
         
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "updateEvents:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView?.addSubview(refreshControl)
         loadCustomRefreshContents()
+        //self.refreshControl.tintColor = grapevineIndicatorColor
         self.refreshControl.beginRefreshing()
         
     }
@@ -71,7 +73,7 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return NSLocalizedString("My Upcoming Events", comment: "")
+        return "My Upcoming Events"
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,8 +136,7 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if self.refreshControl.refreshing && self.events.count == 0  {
             if indexPath.row == 0 {
-                let userWelcome: String = self.userToken.firstName + " " + self.userToken.lastName!
-                let cellText: String = String(format: NSLocalizedString("Loading Events Now", comment: ""), userWelcome)
+                let cellText: String = "Loading your events now, \(self.userToken.firstName) \(self.userToken.lastName)!"
                 return setupOtherCell(cellText, animateIndicator: false)
             }
             return setupEventCell()
@@ -143,8 +144,7 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
 
         
         if events.count == 0 {
-            let userWelcome: String = self.userToken.firstName + " " + self.userToken.lastName!
-            let cellText: String = String(format: NSLocalizedString("You have no events", comment: ""), userWelcome)
+            let cellText: String = "You have no events, \(self.userToken.firstName) \(self.userToken.lastName)! Add some feeds to get some!"
             return setupOtherCell(cellText, animateIndicator: false)
         }
         return setupEventCell()

@@ -33,19 +33,17 @@ public class CalendarAdapter extends EventFeedArrayAdapter {
 
         getUIElements(eventFeedView);
         setEventFields(event);
-        setGrapeLogo(eventFeedView);
+        setGrapeLogo(eventFeedView,parent);
 
         return eventFeedView;
     }
 
-    private void setGrapeLogo(View eventView) {
+    private void setGrapeLogo(View eventView, ViewGroup parent) {
         LinearLayout calendarPageContainer = (LinearLayout) eventView.findViewById(R.id.image_container);
         calendarPageContainer.removeAllViews();
 
-        ImageView grapeLogo = new ImageView(context);
+        LinearLayout grapeImage = (LinearLayout)LayoutInflater.from(getContext()).inflate(R.layout.grape_logo, parent, false);
+        calendarPageContainer.addView(grapeImage);
 
-        grapeLogo.setImageResource(R.drawable.grapes);
-
-        calendarPageContainer.addView(grapeLogo);
     }
 }

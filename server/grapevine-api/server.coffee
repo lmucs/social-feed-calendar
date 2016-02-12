@@ -6,16 +6,28 @@ dotenv._setEnvs()
 express    = require 'express'
 logger     = require 'morgan'
 bodyParser = require 'body-parser'
+https      = require 'https'
+http       = require 'http'
+path       = require 'path'
+fs         = require 'fs'
 auth       = require './middlewares/auth'
 tokens     = require './routes/tokens'
 users      = require './routes/users'
 feeds      = require './routes/feeds'
 events     = require './routes/events'
+
 app = express()
 
 # set up middleware
 app.use bodyParser.json()
 app.use logger process.env.LOGGING_LEVEL or 'dev' unless process.env.NODE_ENV is 'test'
+
+httpPort  = 8888
+httpsPort = 443
+
+privateKey  = fs.readFileSync path.normalize "#{__dirname}/../../certs/cs.lmu.edu.key"
+certificate = fs.readFileSync path.normalize "#{__dirname}/../../certs/server.crt"
+credentials = {key:privateKey, cert:certificate}
 
 methodNotAllowed = (req, res) ->
   res.status(405).json 'message' : 'method not allowed'
@@ -51,4 +63,7 @@ app.all  '/admin/v1/events',        methodNotAllowed
 # handle invalid routes
 app.use (req, res) -> res.status(404).json 'message' : 'resource not found'
 
-module.exports = app.listen process.env.PORT or 8000
+http.createServer(app).listen(httpPort)
+https.createServer(credentials, app).listen(httpsPort)
+
+module.exports = app.listen httpPort

@@ -1,14 +1,53 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="cs.lmu.grapevine.activities.EventFeed">
+    <ProgressBar
+        android:layout_width="@dimen/progress_spinner_size"
+        android:layout_height="@dimen/progress_spinner_size"
+        android:id="@+id/miActionProgress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/my_upcoming_events"
+        android:textSize="@dimen/upcoming_size"
+        android:id="@+id/upcoming"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/upcoming_bottom_margin"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loading">
+        <ImageView
+            android:layout_width="@dimen/med_grapes_width"
+            android:layout_height="@dimen/med_grapes_height"
+            android:src="@drawable/grapes"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/loading_message_size"
+            android:id="@+id/welcome_message"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+        <ImageView
+            android:layout_width="@dimen/med_grapes_width"
+            android:layout_height="@dimen/med_grapes_height"
+            android:src="@drawable/grapes"/>
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/empty_message"/>
+        android:id="@+id/empty_message"
+        android:text="@string/event_list_empty"
+        android:visibility="gone"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,4 +57,4 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/event_request_status"/>
-</RelativeLayout>
+</LinearLayout>

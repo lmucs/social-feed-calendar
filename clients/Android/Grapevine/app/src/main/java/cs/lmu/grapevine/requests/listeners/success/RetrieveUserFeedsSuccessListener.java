@@ -2,6 +2,7 @@ package cs.lmu.grapevine.requests.listeners.success;
 
 import android.app.Activity;
 import android.widget.ListView;
+import android.widget.TextView;
 import com.android.volley.Response;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -42,10 +43,25 @@ public class RetrieveUserFeedsSuccessListener implements Response.Listener<JSONA
     }
 
     private void populateFeedListWith(ArrayList<SocialMediaFeed> feedsFollowed) {
-        SocialMediaListAdapter adapter = new SocialMediaListAdapter(parentActivity,feedsFollowed);
-        ListView socialMediaFeedList = (ListView)parentActivity.findViewById(R.id.currently_following);
-        socialMediaFeedList.setAdapter(adapter);
-        ManageFeeds.feedsAdapter = adapter;
-        socialMediaFeedList.setOnItemLongClickListener(new SocialMediaFeedClickListener(parentActivity));
+        if (feedsFollowed.isEmpty()) {
+            setNoFeedsMessage();
+        } else {
+            SocialMediaListAdapter adapter = new SocialMediaListAdapter(parentActivity,feedsFollowed);
+            ListView socialMediaFeedList = (ListView)parentActivity.findViewById(R.id.currently_following);
+            socialMediaFeedList.setAdapter(adapter);
+            ManageFeeds.feedsAdapter = adapter;
+            socialMediaFeedList.setOnItemLongClickListener(new SocialMediaFeedClickListener(parentActivity));
+            clearNoFeedsMessage();
+        }
+    }
+
+    public void setNoFeedsMessage() {
+        TextView emptyMessage = (TextView)parentActivity.findViewById(R.id.no_feeds_message);
+        emptyMessage.setText(R.string.no_feeds_message);
+    }
+
+    public void clearNoFeedsMessage() {
+        TextView emptyMessage = (TextView)parentActivity.findViewById(R.id.no_feeds_message);
+        emptyMessage.setText("");
     }
 }

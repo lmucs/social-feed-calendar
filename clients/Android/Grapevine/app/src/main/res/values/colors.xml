@@ -3,9 +3,15 @@
     <color name="red" type="color">#FFFF4444</color>
     <color name="facebook">#3b5998</color>
     <color name="twitter">#4099FF</color>
-    <color name="event_highlight">#45B773</color>
+    <color name="event_highlight">#00A551</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="multi_day">#8FD384</color>
     <color name="light_grey">#999999</color>
+    <color name="grape_purple">#CF499A</color>
+    <color name="action_bar_background">#D6B5D6</color>
+    <color name="status_bar">#C08EC0</color>
+    <color name="create_account">#2C88F8</color>
+    <color name="upcoming_gray">#BFBFBF</color>
+
 </resources>

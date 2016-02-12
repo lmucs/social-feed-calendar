@@ -8,6 +8,8 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import cs.lmu.grapevine.UserProfile;
 import cs.lmu.grapevine.activities.EventFeed;
 import cs.lmu.grapevine.activities.Login;
 import cs.lmu.grapevine.R;
@@ -22,8 +24,8 @@ public class RegisterUserSuccessListener implements Response.Listener<JSONObject
     @Override
     public void onResponse(JSONObject response) {
         try{
-            Login.authenticationToken = response.getString("token");
-            Login.userId              = Integer.parseInt(response.getString("userID"));
+            UserProfile.saveAuthenticationToken(response.getString("token"),parentActivity);
+            UserProfile.saveUserId(Integer.parseInt(response.getString("userID")),parentActivity);
 
             toastSuccessMessage();
             Intent feedEvents = new Intent(parentActivity.getApplicationContext(), EventFeed.class);

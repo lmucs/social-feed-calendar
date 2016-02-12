@@ -3,14 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context="cs.lmu.grapevine.activities.EventFeed">
     <item android:id="@+id/action_launch_calendar" android:title="@string/calendar_view"
         android:orderInCategory="5" app:showAsAction="always" android:icon="@drawable/ic_date_range_white_48dp"/>
-    <item android:id="@+id/action_add_group" android:title="@string/title_activity_manage_feeds" android:icon="@drawable/ic_comment_white_48dp"
+    <item android:id="@+id/action_add_group" android:title="@string/title_activity_manage_feeds" android:icon="@drawable/add"
         android:orderInCategory="100" app:showAsAction="always"/>
-    <item android:id="@+id/action_refresh_feed" android:title="@string/refresh" android:orderInCategory="150" app:showAsAction="never"/>
-    <item
-        android:id="@+id/miActionProgress"
-        android:title="Loading..."
-        android:visible="false"
-        android:orderInCategory="1"
-        app:showAsAction="always"
-        app:actionLayout="@layout/action_view_progress" />
+    <item android:id="@+id/action_refresh_feed" android:title="@string/refresh" android:orderInCategory="150" app:showAsAction="always" android:icon="@drawable/refresh"/>
+    <item android:id="@+id/action_settings" android:title="@string/settings" android:orderInCategory="150" app:showAsAction="never" />
 </menu>

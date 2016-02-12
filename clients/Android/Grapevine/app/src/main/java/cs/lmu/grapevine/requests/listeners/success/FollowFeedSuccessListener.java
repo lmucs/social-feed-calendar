@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import org.json.JSONObject;
 import cs.lmu.grapevine.R;
 import cs.lmu.grapevine.activities.ManageFeeds;
+import cs.lmu.grapevine.adapters.SocialMediaListAdapter;
 import cs.lmu.grapevine.entities.SocialMediaFeed;
 
 /**
@@ -48,15 +49,29 @@ public class FollowFeedSuccessListener implements Response.Listener<JSONObject> 
         String sourceName = (String)((RadioButton)parentActivity.findViewById(feedRadioButtonId)).getText();
 
         int duration = Toast.LENGTH_SHORT;
-        String successString = sourceName
-                               +  " feed "
-                               + feedName.getText().toString()
-                               +  " followed";
+        String successString =  " Now following "
+                               + sourceName
+                               + " feed "
+                               + feedName.getText().toString().trim();
+
         Toast toast = Toast.makeText(parentActivity, successString, duration);
         toast.show();
     }
 
     public void addViewToList() {
+        if (ManageFeeds.feedsAdapter.getCount() == 0) {
+            clearNoFeedsMessage();
+        }
+
+        if (ManageFeeds.feedsAdapter == null) {
+            SocialMediaListAdapter adapter = new SocialMediaListAdapter(parentActivity, ManageFeeds.feedsFollowed);
+        }
         ManageFeeds.feedsAdapter.add(newFeed);
+
+    }
+
+    public void clearNoFeedsMessage() {
+        TextView noFeedsMessage = (TextView)parentActivity.findViewById(R.id.no_feeds_message);
+        noFeedsMessage.setText("");
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		57B63A761E69A6C3AF2546DB /* Pods_Grapevine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B253AC65CE295E06508D3F0 /* Pods_Grapevine.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F11D035C1C2DEC3B0027C0A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F11D035B1C2DEC3B0027C0A1 /* Localizable.strings */; };
 		F121A1501B9F56E2008E3F7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F121A14F1B9F56E2008E3F7A /* AppDelegate.swift */; };
 		F121A1531B9F56E2008E3F7A /* Grapevine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F121A1511B9F56E2008E3F7A /* Grapevine.xcdatamodeld */; };
 		F121A1581B9F56E2008E3F7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F121A1561B9F56E2008E3F7A /* Main.storyboard */; };
@@ -51,7 +50,6 @@
 		1B253AC65CE295E06508D3F0 /* Pods_Grapevine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grapevine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F1BD56148D368AD49D07F8 /* Pods-Grapevine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grapevine/Pods-Grapevine.debug.xcconfig"; sourceTree = "<group>"; };
 		AF9E8D6E589A3AFFCA6EDC69 /* Pods-Grapevine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Grapevine/Pods-Grapevine.release.xcconfig"; sourceTree = "<group>"; };
-		F11D035B1C2DEC3B0027C0A1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F121A14A1B9F56E2008E3F7A /* Grapevine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapevine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F121A14E1B9F56E2008E3F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F121A14F1B9F56E2008E3F7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 			children = (
 				F121A14F1B9F56E2008E3F7A /* AppDelegate.swift */,
 				F121A1561B9F56E2008E3F7A /* Main.storyboard */,
-				F11D035B1C2DEC3B0027C0A1 /* Localizable.strings */,
 				F12C19221C292604002EF78C /* SettingsViewController.swift */,
 				F12C191C1C2232CB002EF78C /* GrapevineTabViewController.swift */,
 				F12ECDA71C1AC1E4007D8619 /* NoEventsTableViewCell.swift */,
@@ -285,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F11D035C1C2DEC3B0027C0A1 /* Localizable.strings in Resources */,
 				F121A1581B9F56E2008E3F7A /* Main.storyboard in Resources */,
 				F121A15D1B9F56E2008E3F7A /* LaunchScreen.xib in Resources */,
 				F12C19211C28D478002EF78C /* RefreshView.xib in Resources */,
