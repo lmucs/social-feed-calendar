@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Grapevine
+
+  Created by Matthew Flickner on 12/25/15.
+  Copyright © 2015 Grapevine. All rights reserved.
+*/
+
+
+"Login" = "Login";
+"Logout" = "Logout";
+"Create Account" = "Create Account";
+
+"Username" = "Username";
+"Password" = "Password";
+
+"Repeat Password" = "Repeat Password";
+"First Name" = "First Name";
+"Last Name" = "Last Name";
+"Email Address" = "Email Address";
+
+"Error Creating Account" = "Error Creating Account";
+
+"My Events" = "My Events";
+"Calendar" = "Calendar";
+"My Feeds" = "My Feeds";
+
+"Loading Events Now" = "Loading your events now, %@";
+"You have no events" = "You have no events, %@! Add some feeds to get some!";
+"My Upcoming Events" = "My Upcoming Events";
+
+"Week" = "Week";
+"Month" = "Month";
+
+"Add Feed" = "Add Feed";
+"Add!" = "Add!";
+"Enter Feed Name" = "Enter Feed Name to Add";
